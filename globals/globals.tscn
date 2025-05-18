@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://rh67cn0b42ju"]
+
+[node name="Globals" type="Node"]
+
+[node name="FmodBankLoader" type="FmodBankLoader" parent="."]
+bank_paths = ["res://fmod_data/project/Build/Desktop/Master.bank"]

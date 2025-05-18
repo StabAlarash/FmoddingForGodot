@@ -1,0 +1,27 @@
+[gd_scene load_steps=5 format=3 uid="uid://cc6u0fd7e7mup"]
+
+[ext_resource type="Script" uid="uid://b1nfc7hqbpcp2" path="res://screen_play/screen_play.gd" id="1_6nbvv"]
+[ext_resource type="PackedScene" uid="uid://cgqwr3i3qcauo" path="res://assets/scene.tscn" id="1_m4pt3"]
+[ext_resource type="PackedScene" uid="uid://ci4op6vw8gqnu" path="res://first_persone_controller/player.tscn" id="2_wva2r"]
+[ext_resource type="PackedScene" uid="uid://k32jb54jo8hx" path="res://screen_options/screen_options.tscn" id="4_ggopm"]
+
+[node name="screen_play" type="Control"]
+process_mode = 3
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_6nbvv")
+metadata/_edit_lock_ = true
+
+[node name="scene" parent="." instance=ExtResource("1_m4pt3")]
+process_mode = 1
+
+[node name="player" parent="." instance=ExtResource("2_wva2r")]
+process_mode = 1
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 136.651, 0.778137, 211.727)
+
+[node name="screen_options" parent="." instance=ExtResource("4_ggopm")]
+visible = false

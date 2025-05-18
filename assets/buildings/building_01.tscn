@@ -1,0 +1,26 @@
+[gd_scene load_steps=4 format=3 uid="uid://fcnl6oqava73"]
+
+[ext_resource type="PackedScene" uid="uid://iphswfmgu2n6" path="res://assets/blender/house.glb" id="1_p4r3p"]
+[ext_resource type="Script" uid="uid://c3dhidou4u1vr" path="res://assets/buildings/area_change_parameter.gd" id="2_cqx8u"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_p4r3p"]
+size = Vector3(4.31079, 2.75848, 7.39014)
+
+[node name="building01" type="Node3D"]
+
+[node name="house" parent="." instance=ExtResource("1_p4r3p")]
+
+[node name="door_002" parent="house" index="5"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.46011, 0, 0.743161)
+
+[node name="Area3D_interior" type="Area3D" parent="."]
+script = ExtResource("2_cqx8u")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D_interior"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0250244, 1.37924, -0.0168457)
+shape = SubResource("BoxShape3D_p4r3p")
+
+[connection signal="body_entered" from="Area3D_interior" to="Area3D_interior" method="_on_body_entered"]
+[connection signal="body_exited" from="Area3D_interior" to="Area3D_interior" method="_on_body_exited"]
+
+[editable path="house"]

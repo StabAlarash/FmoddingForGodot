@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://dt24qkaq0am84"]
+
+[ext_resource type="Script" uid="uid://s1ky15kksbap" path="res://first_persone_controller/fpsinteractable.gd" id="1_axl0e"]
+
+[node name="FPSInteractable" type="Area3D"]
+script = ExtResource("1_axl0e")
