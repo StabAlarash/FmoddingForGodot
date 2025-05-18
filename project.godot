@@ -48,7 +48,6 @@ enabled=PackedStringArray("res://addons/fmod/plugin.cfg", "res://addons/terrain_
 folder_colors={
 "res://addons/": "purple",
 "res://assets/": "orange",
-"res://birb2d_test/": "gray",
 "res://build/": "pink",
 "res://first_persone_controller/": "red",
 "res://fmod_data/": "orange",
