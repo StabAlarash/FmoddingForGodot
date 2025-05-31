@@ -3,6 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://dapyijntm7kwh" path="res://assets/HDR_hazy_nebulae.hdr" id="1_7de6x"]
 
 [sub_resource type="PhysicalSkyMaterial" id="PhysicalSkyMaterial_ieyyk"]
+turbidity = 1000.0
 night_sky = ExtResource("1_7de6x")
 
 [sub_resource type="Sky" id="Sky_6ynda"]

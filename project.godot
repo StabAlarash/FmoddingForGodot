@@ -54,7 +54,8 @@ folder_colors={
 "res://globals/": "red",
 "res://screen_options/": "green",
 "res://screen_play/": "green",
-"res://screen_title/": "green"
+"res://screen_title/": "green",
+"res://source_blender/": "pink"
 }
 
 [input]

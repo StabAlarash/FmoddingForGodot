@@ -1,8 +1,8 @@
 [gd_scene load_steps=34 format=3 uid="uid://cgqwr3i3qcauo"]
 
-[ext_resource type="PackedScene" uid="uid://5t00uxho24ka" path="res://assets/blender/grass01.glb" id="1_m1igt"]
+[ext_resource type="PackedScene" uid="uid://5t00uxho24ka" path="res://assets/source/grass01.glb" id="1_m1igt"]
 [ext_resource type="Texture2D" uid="uid://dg4ohveg2m7yf" path="res://assets/white16x16.png" id="1_m7jmp"]
-[ext_resource type="PackedScene" uid="uid://c5ou5ilb57n0e" path="res://assets/blender/rock01.glb" id="2_10k10"]
+[ext_resource type="PackedScene" uid="uid://c5ou5ilb57n0e" path="res://assets/source/rock01.glb" id="2_10k10"]
 [ext_resource type="Script" uid="uid://nh60cjrkjc0d" path="res://assets/trees.gd" id="3_y2354"]
 [ext_resource type="PackedScene" uid="uid://1qhtnbhsawr3" path="res://assets/tree.tscn" id="4_ni31j"]
 [ext_resource type="PackedScene" uid="uid://yiysfekp0fpg" path="res://assets/well.tscn" id="5_7c5am"]
@@ -540,5 +540,5 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 22.9147, 0, -9.85985)
 mesh = SubResource("PlaneMesh_ldmu7")
 
 [node name="DayNightCycle" parent="." instance=ExtResource("9_ldmu7")]
-offset = 0.2
-day_length = 180.0
+offset = 0.3
+day_length = 600.0

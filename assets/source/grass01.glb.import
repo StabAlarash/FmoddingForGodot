@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://iphswfmgu2n6"
-path="res://.godot/imported/house.glb-dc05ef37bbfa6fd0ed989d0c8ad6596d.scn"
+uid="uid://5t00uxho24ka"
+path="res://.godot/imported/grass01.glb-0877c9aef4d4e704abfe5f8560a3df3b.scn"
 
 [deps]
 
-source_file="res://assets/blender/house.glb"
-dest_files=["res://.godot/imported/house.glb-dc05ef37bbfa6fd0ed989d0c8ad6596d.scn"]
+source_file="res://assets/source/grass01.glb"
+dest_files=["res://.godot/imported/grass01.glb-0877c9aef4d4e704abfe5f8560a3df3b.scn"]
 
 [params]
 
