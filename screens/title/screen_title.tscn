@@ -1,0 +1,55 @@
+[gd_scene format=3 uid="uid://pvtjfq2q10mv"]
+
+[ext_resource type="Script" uid="uid://ctbfb1aki3kse" path="res://screens/title/screen_title.gd" id="1_bdliy"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_hwae1"]
+font_size = 64
+outline_size = 12
+outline_color = Color(0, 0, 0, 1)
+shadow_size = 8
+shadow_color = Color(0, 0, 0, 1)
+shadow_offset = Vector2(0, 6)
+
+[node name="screen_title" type="Control" unique_id=1079829373]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_bdliy")
+metadata/_edit_lock_ = true
+
+[node name="lbl_title" type="Label" parent="." unique_id=723784555]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_bottom = -444.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "FMOD Template"
+label_settings = SubResource("LabelSettings_hwae1")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="center" type="CenterContainer" parent="." unique_id=1399265200]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 309.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="center" unique_id=1832276829]
+layout_mode = 2
+
+[node name="btn_new_game" type="Button" parent="center/VBoxContainer" unique_id=388442384]
+custom_minimum_size = Vector2(256, 46)
+layout_mode = 2
+text = "New Game"
+
+[node name="FmodListener2D" type="FmodListener2D" parent="." unique_id=1866242295]
+
+[connection signal="pressed" from="center/VBoxContainer/btn_new_game" to="." method="_on_btn_new_game_pressed"]

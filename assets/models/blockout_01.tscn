@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://sx2a64ate0q8"]
+
+[ext_resource type="PackedScene" uid="uid://caeiin3ryaaa" path="res://assets/models/blockout01.blend" id="1_tw5so"]
+
+[node name="blockout01" unique_id=1198116624 instance=ExtResource("1_tw5so")]
+
+[node name="StaticBody3D" parent="Ground" parent_id_path=PackedInt32Array(1152371516) index="0" unique_id=1124951422]
+metadata/surface = "Grass"

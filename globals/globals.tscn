@@ -1,6 +1,9 @@
-[gd_scene format=3 uid="uid://rh67cn0b42ju"]
+[gd_scene format=3 uid="uid://cn1h03lkglwm7"]
 
-[node name="Globals" type="Node"]
+[ext_resource type="Script" uid="uid://ckippnk43sm1u" path="res://globals/globals.gd" id="1_jmrm8"]
 
-[node name="FmodBankLoader" type="FmodBankLoader" parent="."]
-bank_paths = ["res://fmod_data/project/Build/Desktop/Master.bank"]
+[node name="Globals" type="Node" unique_id=2142149647]
+script = ExtResource("1_jmrm8")
+
+[node name="FmodBankLoader" type="FmodBankLoader" parent="." unique_id=824868059]
+bank_paths = ["res://assets/fmod/Build/Desktop/Master.bank"]
