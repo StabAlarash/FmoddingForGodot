@@ -49,6 +49,21 @@ theme_override_constants/margin_bottom = 10
 layout_mode = 2
 mouse_filter = 2
 
+[node name="ContainerTime" type="HBoxContainer" parent="WorldGUI/PanelContainer/MarginContainer/VBoxContainer" unique_id=471160283]
+layout_mode = 2
+mouse_filter = 2
+
+[node name="lbl_time" type="Label" parent="WorldGUI/PanelContainer/MarginContainer/VBoxContainer/ContainerTime" unique_id=1103336542]
+layout_mode = 2
+text = "Time"
+
+[node name="lbl_time_value" type="Label" parent="WorldGUI/PanelContainer/MarginContainer/VBoxContainer/ContainerTime" unique_id=1469935422]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+text = "00:00"
+horizontal_alignment = 2
+
 [node name="ContainerZone" type="HBoxContainer" parent="WorldGUI/PanelContainer/MarginContainer/VBoxContainer" unique_id=1342482070]
 layout_mode = 2
 mouse_filter = 2
@@ -62,6 +77,36 @@ unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 3
 text = "ZONE_NAME"
+horizontal_alignment = 2
+
+[node name="ContainerSurface" type="HBoxContainer" parent="WorldGUI/PanelContainer/MarginContainer/VBoxContainer" unique_id=380777115]
+layout_mode = 2
+mouse_filter = 2
+
+[node name="lbl_surface" type="Label" parent="WorldGUI/PanelContainer/MarginContainer/VBoxContainer/ContainerSurface" unique_id=1241229382]
+layout_mode = 2
+text = "Surface"
+
+[node name="lbl_surface_value" type="Label" parent="WorldGUI/PanelContainer/MarginContainer/VBoxContainer/ContainerSurface" unique_id=1379458487]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+text = "SURFACE_NAME"
+horizontal_alignment = 2
+
+[node name="ContainerUnderwater" type="HBoxContainer" parent="WorldGUI/PanelContainer/MarginContainer/VBoxContainer" unique_id=60756587]
+layout_mode = 2
+mouse_filter = 2
+
+[node name="lbl_underwater" type="Label" parent="WorldGUI/PanelContainer/MarginContainer/VBoxContainer/ContainerUnderwater" unique_id=1936966444]
+layout_mode = 2
+text = "Underwater"
+
+[node name="lbl_underwater_value" type="Label" parent="WorldGUI/PanelContainer/MarginContainer/VBoxContainer/ContainerUnderwater" unique_id=1235073138]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+text = "VALUE"
 horizontal_alignment = 2
 
 [node name="ContainerTension" type="HBoxContainer" parent="WorldGUI/PanelContainer/MarginContainer/VBoxContainer" unique_id=2078881900]

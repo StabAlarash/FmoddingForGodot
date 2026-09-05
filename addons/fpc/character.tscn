@@ -151,6 +151,10 @@ _data = {
 
 [sub_resource type="CameraAttributesPractical" id="CameraAttributesPractical_4717r"]
 auto_exposure_enabled = true
+auto_exposure_min_sensitivity = 100.0
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_g4v7s"]
+radius = 0.02
 
 [sub_resource type="Animation" id="Animation_gh776"]
 resource_name = "RESET"
@@ -427,6 +431,13 @@ current = true
 fov = 37.849285
 
 [node name="FmodListener3D" type="FmodListener3D" parent="Head/Camera" unique_id=514112878]
+
+[node name="AreaCamera" type="Area3D" parent="Head/Camera" unique_id=1016190432 groups=["player_camera"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.1, 0)
+metadata/_edit_group_ = true
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Head/Camera/AreaCamera" unique_id=1358901311]
+shape = SubResource("SphereShape3D_g4v7s")
 
 [node name="HeadbobAnimation" type="AnimationPlayer" parent="Head" unique_id=2050130428]
 libraries/ = SubResource("AnimationLibrary_o0unb")

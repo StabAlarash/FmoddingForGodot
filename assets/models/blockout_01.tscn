@@ -4,5 +4,5 @@
 
 [node name="blockout01" unique_id=1198116624 instance=ExtResource("1_tw5so")]
 
-[node name="StaticBody3D" parent="Ground" parent_id_path=PackedInt32Array(1152371516) index="0" unique_id=1124951422]
+[node name="StaticBody3D" parent="Ground" parent_id_path=PackedInt32Array(417820907) index="0" unique_id=532323120]
 metadata/surface = "Grass"

@@ -24,6 +24,7 @@ func _process(delta):
 	if not process_in_editor and Engine.is_editor_hint():
 		return
 	time_of_day = fmod(time_of_day + delta * speed, 24.0)
+	Globals.time = time_of_day
 
 func update_time_of_day():
 	if not is_inside_tree():

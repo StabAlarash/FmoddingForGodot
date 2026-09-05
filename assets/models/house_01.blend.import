@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://caeiin3ryaaa"
-path="res://.godot/imported/blockout01.blend-eac3f28b1af95afaf2390bd440a51397.scn"
+uid="uid://bre8v5g8rhkfr"
+path="res://.godot/imported/house_01.blend-c77f5063a614dd2dee3a8ce5ef7d60d2.scn"
 
 [deps]
 
-source_file="res://assets/models/blockout01.blend"
-dest_files=["res://.godot/imported/blockout01.blend-eac3f28b1af95afaf2390bd440a51397.scn"]
+source_file="res://assets/models/house_01.blend"
+dest_files=["res://.godot/imported/house_01.blend-c77f5063a614dd2dee3a8ce5ef7d60d2.scn"]
 
 [params]
 
@@ -35,12 +35,12 @@ animation/fps=30
 animation/trimming=false
 animation/remove_immutable_tracks=true
 animation/import_rest_as_RESET=false
-import_script/path="uid://v2tixgd1schi"
+import_script/path=""
 materials/extract=0
 materials/extract_format=0
 materials/extract_path=""
 _subresources={}
-blender/nodes/visible=1
+blender/nodes/visible=0
 blender/nodes/active_collection_only=false
 blender/nodes/punctual_lights=true
 blender/nodes/cameras=true

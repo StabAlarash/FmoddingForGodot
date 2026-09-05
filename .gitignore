@@ -1,2 +1,7 @@
 # Godot 4+ specific ignores
 .godot/
+
+# FMOD
+assets/fmod/.cache/
+assets/fmod/.unsaved/
+assets/fmod/.user/

@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://caeiin3ryaaa"
-path="res://.godot/imported/blockout01.blend-eac3f28b1af95afaf2390bd440a51397.scn"
+uid="uid://dkcvraiwyadsl"
+path="res://.godot/imported/house_aa.blend-922c851e3d6cd84175287e83602e82dd.scn"
 
 [deps]
 
-source_file="res://assets/models/blockout01.blend"
-dest_files=["res://.godot/imported/blockout01.blend-eac3f28b1af95afaf2390bd440a51397.scn"]
+source_file="res://assets/models/house_aa.blend"
+dest_files=["res://.godot/imported/house_aa.blend-922c851e3d6cd84175287e83602e82dd.scn"]
 
 [params]
 
@@ -40,7 +40,7 @@ materials/extract=0
 materials/extract_format=0
 materials/extract_path=""
 _subresources={}
-blender/nodes/visible=1
+blender/nodes/visible=0
 blender/nodes/active_collection_only=false
 blender/nodes/punctual_lights=true
 blender/nodes/cameras=true
