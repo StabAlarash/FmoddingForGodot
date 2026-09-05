@@ -5,3 +5,6 @@
 assets/fmod/.cache/
 assets/fmod/.unsaved/
 assets/fmod/.user/
+
+# Blender
+*.blend1
