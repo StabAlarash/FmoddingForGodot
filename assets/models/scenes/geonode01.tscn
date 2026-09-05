@@ -1,0 +1,5 @@
+[gd_scene format=3 uid="uid://dpk6034imkdd8"]
+
+[ext_resource type="PackedScene" uid="uid://dmn636167qd75" path="res://assets/models/blender/geonode01.blend" id="1_tyokp"]
+
+[node name="geonode01" unique_id=486878368 instance=ExtResource("1_tyokp")]

@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://d33sxpsyrww61"
-path="res://.godot/imported/tree_pine.blend-e7b366be2dde36c375baf21b9d1e042d.scn"
+uid="uid://caeiin3ryaaa"
+path="res://.godot/imported/blockout01.blend-a288a938528bb548a3d23a9a0bcd8844.scn"
 
 [deps]
 
-source_file="res://assets/models/tree_pine.blend"
-dest_files=["res://.godot/imported/tree_pine.blend-e7b366be2dde36c375baf21b9d1e042d.scn"]
+source_file="res://assets/models/blender/blockout01.blend"
+dest_files=["res://.godot/imported/blockout01.blend-a288a938528bb548a3d23a9a0bcd8844.scn"]
 
 [params]
 
@@ -35,12 +35,12 @@ animation/fps=30
 animation/trimming=false
 animation/remove_immutable_tracks=true
 animation/import_rest_as_RESET=false
-import_script/path=""
+import_script/path="uid://v2tixgd1schi"
 materials/extract=0
 materials/extract_format=0
 materials/extract_path=""
 _subresources={}
-blender/nodes/visible=0
+blender/nodes/visible=1
 blender/nodes/active_collection_only=false
 blender/nodes/punctual_lights=true
 blender/nodes/cameras=true

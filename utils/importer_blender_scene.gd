@@ -3,6 +3,9 @@ extends EditorScenePostImport
 
 #const HOUSE_TEST = preload("uid://dtwt0g6g1ufve")
 
+const BLENDER_PATH = "res://assets/models/blender"
+const SCENES_PATH = "res://assets/models/scenes"
+
 func _post_import(scene):
 	iterate(scene, scene)
 	return scene
@@ -21,9 +24,9 @@ func iterate(node, root):
 			if parts[-1].is_valid_int():
 				scene_name = scene_name.left(-parts[-1].length()-1)
 			print(scene_name)
-			var resource_path = "res://assets/models/%s.tscn" % scene_name
+			var resource_path = "%s/%s.tscn" % [SCENES_PATH, scene_name]
 			if not ResourceLoader.exists(resource_path):
-				resource_path = "res://assets/models/%s.blend" % scene_name
+				resource_path = "%s/%s.blend" % [BLENDER_PATH, scene_name]
 			
 			var parent = node.get_parent()
 			var house:Node3D = load(resource_path).instantiate()

@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://bb42lgetvpcqs"]
 
-[ext_resource type="PackedScene" uid="uid://sx2a64ate0q8" path="res://assets/models/blockout_01.tscn" id="1_6xmxd"]
+[ext_resource type="PackedScene" uid="uid://sx2a64ate0q8" path="res://assets/models/scenes/blockout_01.tscn" id="1_6xmxd"]
 [ext_resource type="Script" uid="uid://bugftf40hxy21" path="res://world/zone_area.gd" id="2_tcf2h"]
 [ext_resource type="Script" uid="uid://1edfyd8jq34u" path="res://systems/day_night.gd" id="3_4717r"]
 [ext_resource type="Script" uid="uid://idetmabmjxtc" path="res://world/area_underwater.gd" id="4_h5o24"]

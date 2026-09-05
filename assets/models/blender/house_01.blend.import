@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://ynbadmvcbsk4"
-path="res://.godot/imported/barrel.blend-6479e9d6a112123ac5dc1c3fdabf9bbd.scn"
+uid="uid://bre8v5g8rhkfr"
+path="res://.godot/imported/house_01.blend-8fdd0a679f805c4962f7a0be2f48da40.scn"
 
 [deps]
 
-source_file="res://assets/models/barrel.blend"
-dest_files=["res://.godot/imported/barrel.blend-6479e9d6a112123ac5dc1c3fdabf9bbd.scn"]
+source_file="res://assets/models/blender/house_01.blend"
+dest_files=["res://.godot/imported/house_01.blend-8fdd0a679f805c4962f7a0be2f48da40.scn"]
 
 [params]
 

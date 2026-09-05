@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://dtbbehkprf2uu"
-path="res://.godot/imported/house_geonode.blend-0645c33f0c86a05c2525ebcc32662539.scn"
+uid="uid://b4u5b2mwcbnvn"
+path="res://.godot/imported/house_test.blend-84ba6b8d5035a0ce1f23492f634b06a6.scn"
 
 [deps]
 
-source_file="res://assets/models/house_geonode.blend"
-dest_files=["res://.godot/imported/house_geonode.blend-0645c33f0c86a05c2525ebcc32662539.scn"]
+source_file="res://assets/models/blender/house_test.blend"
+dest_files=["res://.godot/imported/house_test.blend-84ba6b8d5035a0ce1f23492f634b06a6.scn"]
 
 [params]
 
@@ -40,7 +40,7 @@ materials/extract=0
 materials/extract_format=0
 materials/extract_path=""
 _subresources={}
-blender/nodes/visible=0
+blender/nodes/visible=1
 blender/nodes/active_collection_only=false
 blender/nodes/punctual_lights=true
 blender/nodes/cameras=true

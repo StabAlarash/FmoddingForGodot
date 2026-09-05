@@ -1,13 +1,13 @@
 [gd_scene format=3 uid="uid://6ty3v5lhhpya"]
 
-[ext_resource type="PackedScene" uid="uid://b75v1vf0e3o0o" path="res://assets/models/door.blend" id="1_0fucj"]
-[ext_resource type="Script" uid="uid://cx4nyb8mutqo1" path="res://assets/models/door.gd" id="2_3xnsl"]
+[ext_resource type="PackedScene" uid="uid://b75v1vf0e3o0o" path="res://assets/models/blender/door.blend" id="1_awp5q"]
+[ext_resource type="Script" uid="uid://cx4nyb8mutqo1" path="res://assets/models/scenes/door.gd" id="2_ogbxy"]
 
 [sub_resource type="CylinderShape3D" id="CylinderShape3D_g4v7s"]
 radius = 1.964
 
-[node name="door" unique_id=1857796700 instance=ExtResource("1_0fucj")]
-script = ExtResource("2_3xnsl")
+[node name="door" unique_id=1857796700 instance=ExtResource("1_awp5q")]
+script = ExtResource("2_ogbxy")
 
 [node name="Area3D" type="Area3D" parent="." index="1" unique_id=332763274]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.62294745)

@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://b4u5b2mwcbnvn"
-path="res://.godot/imported/house_test.blend-84e000e3165e39f2a199202c434319c0.scn"
+uid="uid://dyghnqnujtoky"
+path="res://.godot/imported/fence.blend-1d9bcf628721746331d6425a9e4ec302.scn"
 
 [deps]
 
-source_file="res://assets/models/house_test.blend"
-dest_files=["res://.godot/imported/house_test.blend-84e000e3165e39f2a199202c434319c0.scn"]
+source_file="res://assets/models/blender/fence.blend"
+dest_files=["res://.godot/imported/fence.blend-1d9bcf628721746331d6425a9e4ec302.scn"]
 
 [params]
 
@@ -40,7 +40,7 @@ materials/extract=0
 materials/extract_format=0
 materials/extract_path=""
 _subresources={}
-blender/nodes/visible=1
+blender/nodes/visible=0
 blender/nodes/active_collection_only=false
 blender/nodes/punctual_lights=true
 blender/nodes/cameras=true

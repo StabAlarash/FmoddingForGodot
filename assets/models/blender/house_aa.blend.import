@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://dp1eutp22bd3y"
-path="res://.godot/imported/house_template.blend-5d81b4a85ee1eca6c23704b675b2f18b.scn"
+uid="uid://dkcvraiwyadsl"
+path="res://.godot/imported/house_aa.blend-5820380226b065e80f2eff8780aa9496.scn"
 
 [deps]
 
-source_file="res://assets/models/house_template.blend"
-dest_files=["res://.godot/imported/house_template.blend-5d81b4a85ee1eca6c23704b675b2f18b.scn"]
+source_file="res://assets/models/blender/house_aa.blend"
+dest_files=["res://.godot/imported/house_aa.blend-5820380226b065e80f2eff8780aa9496.scn"]
 
 [params]
 
@@ -35,7 +35,7 @@ animation/fps=30
 animation/trimming=false
 animation/remove_immutable_tracks=true
 animation/import_rest_as_RESET=false
-import_script/path=""
+import_script/path="uid://v2tixgd1schi"
 materials/extract=0
 materials/extract_format=0
 materials/extract_path=""
