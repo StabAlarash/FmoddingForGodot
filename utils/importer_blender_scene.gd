@@ -1,8 +1,6 @@
 @tool
 extends EditorScenePostImport
 
-#const HOUSE_TEST = preload("uid://dtwt0g6g1ufve")
-
 const BLENDER_PATH = "res://assets/models/blender"
 const SCENES_PATH = "res://assets/models/scenes"
 

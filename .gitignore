@@ -8,3 +8,6 @@ assets/fmod/.user/
 
 # Blender
 *.blend1
+
+# Local Source
+source/

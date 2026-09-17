@@ -1,9 +1,23 @@
 [gd_scene format=3 uid="uid://k32jb54jo8hx"]
 
 [ext_resource type="Script" uid="uid://cehkggana8vt" path="res://screens/options/screen_options.gd" id="1_eyih4"]
+[ext_resource type="Theme" uid="uid://vqsn7hlayyr0" path="res://gui/theme_big_button.tres" id="2_j5u8y"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_daguk"]
+bg_color = Color(0.14406255, 0.14406255, 0.14406249, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+shadow_color = Color(0.1, 0.1, 0.1, 1)
+shadow_size = 1
+shadow_offset = Vector2(0, 8)
+
+[sub_resource type="Theme" id="Theme_j5u8y"]
+PanelContainer/styles/panel = SubResource("StyleBoxFlat_daguk")
 
 [sub_resource type="LabelSettings" id="LabelSettings_wva2r"]
-font_size = 32
+font_size = 48
 outline_size = 12
 outline_color = Color(0, 0, 0, 1)
 shadow_size = 8
@@ -26,8 +40,9 @@ grow_vertical = 2
 metadata/_edit_lock_ = true
 
 [node name="PanelContainer" type="PanelContainer" parent="center" unique_id=927337463]
-custom_minimum_size = Vector2(256, 256)
+custom_minimum_size = Vector2(320, 256)
 layout_mode = 2
+theme = SubResource("Theme_j5u8y")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="center/PanelContainer" unique_id=1996951815]
 layout_mode = 2
@@ -100,18 +115,21 @@ size_flags_vertical = 3
 layout_mode = 2
 theme_override_constants/margin_left = 8
 theme_override_constants/margin_right = 8
-theme_override_constants/margin_bottom = 8
+theme_override_constants/margin_bottom = 16
 
 [node name="HBoxContainer" type="VBoxContainer" parent="center/PanelContainer/VBoxContainer/MarginContainer2" unique_id=734641712]
 layout_mode = 2
+theme_override_constants/separation = 16
 alignment = 2
 
 [node name="btn_back_title" type="Button" parent="center/PanelContainer/VBoxContainer/MarginContainer2/HBoxContainer" unique_id=1771851465]
 layout_mode = 2
+theme = ExtResource("2_j5u8y")
 text = "Back to Title"
 
 [node name="btn_continue" type="Button" parent="center/PanelContainer/VBoxContainer/MarginContainer2/HBoxContainer" unique_id=1885773351]
 layout_mode = 2
+theme = ExtResource("2_j5u8y")
 text = "Continue"
 
 [connection signal="pressed" from="center/PanelContainer/VBoxContainer/MarginContainer2/HBoxContainer/btn_back_title" to="." method="_on_btn_back_title_pressed"]

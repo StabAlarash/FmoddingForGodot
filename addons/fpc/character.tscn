@@ -1,6 +1,8 @@
 [gd_scene format=3 uid="uid://cc1m2a1obsyn4"]
 
 [ext_resource type="Script" uid="uid://hutuis63hgev" path="res://addons/fpc/character.gd" id="1_0t4e8"]
+[ext_resource type="Script" uid="uid://d0qlnamd55yhk" path="res://systems/lantern.gd" id="2_qaoyu"]
+[ext_resource type="Script" uid="uid://dqyg3ghpdp308" path="res://systems/interact.gd" id="3_gv6je"]
 [ext_resource type="Script" uid="uid://dgfl3skp075ft" path="res://addons/fpc/EditorModule.gd" id="3_v3ckk"]
 [ext_resource type="Script" uid="uid://u5u7xxlvmcxx" path="res://addons/fpc/debug.gd" id="3_x1wcc"]
 [ext_resource type="Script" uid="uid://bjb6pgoxyd6bj" path="res://systems/foot_step.gd" id="4_bx7cj"]
@@ -438,6 +440,18 @@ metadata/_edit_group_ = true
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Head/Camera/AreaCamera" unique_id=1358901311]
 shape = SubResource("SphereShape3D_g4v7s")
+
+[node name="Lantern" type="SpotLight3D" parent="Head/Camera" unique_id=1254827819]
+shadow_enabled = true
+spot_range = 13.605855
+spot_angle = 46.535835
+script = ExtResource("2_qaoyu")
+
+[node name="RayCastInteract" type="RayCast3D" parent="Head/Camera" unique_id=109557562]
+target_position = Vector3(0, 0, -2)
+collide_with_areas = true
+collide_with_bodies = false
+script = ExtResource("3_gv6je")
 
 [node name="HeadbobAnimation" type="AnimationPlayer" parent="Head" unique_id=2050130428]
 libraries/ = SubResource("AnimationLibrary_o0unb")

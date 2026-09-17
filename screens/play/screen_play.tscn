@@ -6,6 +6,14 @@
 [ext_resource type="Script" uid="uid://k65p5482dl7v" path="res://screens/play/world_gui.gd" id="3_bru6y"]
 [ext_resource type="PackedScene" uid="uid://k32jb54jo8hx" path="res://screens/options/screen_options.tscn" id="4_jawh6"]
 
+[sub_resource type="LabelSettings" id="LabelSettings_ogbxy"]
+font_size = 32
+outline_size = 12
+outline_color = Color(0, 0, 0, 1)
+shadow_size = 12
+shadow_color = Color(0, 0, 0, 1)
+shadow_offset = Vector2(0, 2)
+
 [node name="ScreenPlay" type="Node" unique_id=1671506322]
 script = ExtResource("1_ytnru")
 
@@ -79,6 +87,21 @@ size_flags_horizontal = 3
 text = "ZONE_NAME"
 horizontal_alignment = 2
 
+[node name="ContainerSubZone" type="HBoxContainer" parent="WorldGUI/PanelContainer/MarginContainer/VBoxContainer" unique_id=1156218758]
+layout_mode = 2
+mouse_filter = 2
+
+[node name="lbl_subzone" type="Label" parent="WorldGUI/PanelContainer/MarginContainer/VBoxContainer/ContainerSubZone" unique_id=949263281]
+layout_mode = 2
+text = "SubZone"
+
+[node name="lbl_subzone_value" type="Label" parent="WorldGUI/PanelContainer/MarginContainer/VBoxContainer/ContainerSubZone" unique_id=327293153]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+text = "SUBZONE_NAME"
+horizontal_alignment = 2
+
 [node name="ContainerSurface" type="HBoxContainer" parent="WorldGUI/PanelContainer/MarginContainer/VBoxContainer" unique_id=380777115]
 layout_mode = 2
 mouse_filter = 2
@@ -129,3 +152,16 @@ event_name = "event:/Music_Main"
 event_guid = "{0d057b78-7278-4d10-a191-1a6400f10125}"
 attached = false
 autoplay = true
+
+[node name="CenterContainer" type="CenterContainer" parent="." unique_id=745824924]
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 125.0
+grow_horizontal = 2
+mouse_filter = 2
+
+[node name="lbl_interactable" type="Label" parent="CenterContainer" unique_id=1138300932]
+unique_name_in_owner = true
+layout_mode = 2
+text = "SOMETHING"
+label_settings = SubResource("LabelSettings_ogbxy")

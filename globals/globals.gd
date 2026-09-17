@@ -13,6 +13,13 @@ var zone: String:
 		zone_changed.emit()
 		FmodServer.set_global_parameter_by_name_with_label("Zone", zone)
 
+signal subzone_changed
+var subzone: String:
+	set(value):
+		subzone = value
+		subzone_changed.emit()
+		#FmodServer.set_global_parameter_by_name_with_label("Zone", zone)
+
 signal tension_changed
 var tension:float = 0.0:
 	set(value):

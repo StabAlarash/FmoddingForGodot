@@ -63,7 +63,7 @@ func _input(_event):
 
 func _on_btn_back_title_pressed():
 	get_tree().paused = false
-	get_tree().change_scene_to_file("res://screen_title/screen_title.tscn")
+	get_tree().change_scene_to_file("res://screens/title/screen_title.tscn")
 
 func _on_btn_continue_pressed():
 	paused = false

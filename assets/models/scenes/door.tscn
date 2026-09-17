@@ -1,20 +1,31 @@
 [gd_scene format=3 uid="uid://6ty3v5lhhpya"]
 
-[ext_resource type="PackedScene" uid="uid://b75v1vf0e3o0o" path="res://assets/models/blender/door.blend" id="1_awp5q"]
+[ext_resource type="PackedScene" uid="uid://c7jf1hqg6qmo2" path="res://assets/models/gltf/door.glb" id="1_awp5q"]
 [ext_resource type="Script" uid="uid://cx4nyb8mutqo1" path="res://assets/models/scenes/door.gd" id="2_ogbxy"]
+[ext_resource type="PackedScene" uid="uid://ddc4p3o0pd5ut" path="res://systems/interactable.tscn" id="3_ogbxy"]
 
-[sub_resource type="CylinderShape3D" id="CylinderShape3D_g4v7s"]
-radius = 1.964
+[sub_resource type="BoxShape3D" id="BoxShape3D_ytnru"]
+size = Vector3(0.27191162, 1.9866943, 1.354248)
 
 [node name="door" unique_id=1857796700 instance=ExtResource("1_awp5q")]
 script = ExtResource("2_ogbxy")
 
-[node name="Area3D" type="Area3D" parent="." index="1" unique_id=332763274]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.62294745)
+[node name="Interactable" parent="Pivot" parent_id_path=PackedInt32Array(1669802478) index="8" unique_id=581210607 instance=ExtResource("3_ogbxy")]
+unique_name_in_owner = true
+text = "Open"
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D" index="0" unique_id=2069426891]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
-shape = SubResource("CylinderShape3D_g4v7s")
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Pivot/Interactable" index="0" unique_id=2069426891]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00064086914, 0.9850464, -0.6745832)
+shape = SubResource("BoxShape3D_ytnru")
 
-[connection signal="body_entered" from="Area3D" to="." method="_on_area_3d_body_entered"]
-[connection signal="body_exited" from="Area3D" to="." method="_on_area_3d_body_exited"]
+[node name="DoorOpen" type="FmodEventEmitter3D" parent="." index="1" unique_id=1463490303]
+event_name = "event:/Door Open"
+event_guid = "{fee05e2d-9492-419d-8b25-d269ebe38365}"
+unique_name_in_owner = true
+
+[node name="DoorClose" type="FmodEventEmitter3D" parent="." index="2" unique_id=341323524]
+event_name = "event:/Door Close"
+event_guid = "{842d1ddb-ac3d-420f-bc8f-4d85fdd897a6}"
+unique_name_in_owner = true
+
+[connection signal="interacted" from="Pivot/Interactable" to="." method="_on_interactable_interacted"]
