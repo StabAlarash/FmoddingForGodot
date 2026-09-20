@@ -1,0 +1,5 @@
+[gd_scene format=3 uid="uid://sx2a64ate0q8"]
+
+[ext_resource type="PackedScene" uid="uid://brt2bqw83hk7g" path="res://assets/models/gltf/blockout01.glb" id="1_tw5so"]
+
+[node name="blockout01" unique_id=1198116624 instance=ExtResource("1_tw5so")]

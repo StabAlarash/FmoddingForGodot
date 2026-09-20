@@ -1,8 +1,0 @@
-[gd_scene load_steps=2 format=3 uid="uid://6jkuiwe15eni"]
-
-[ext_resource type="Script" uid="uid://wcfvwy5o152x" path="res://first_persone_controller/fps_interaction.gd" id="1_377vy"]
-
-[node name="FPSInteraction" type="RayCast3D"]
-target_position = Vector3(0, 0, -2)
-collide_with_areas = true
-script = ExtResource("1_377vy")

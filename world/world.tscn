@@ -1,0 +1,210 @@
+[gd_scene format=3 uid="uid://bb42lgetvpcqs"]
+
+[ext_resource type="PackedScene" uid="uid://sx2a64ate0q8" path="res://assets/models/scenes/blockout_01.tscn" id="1_6xmxd"]
+[ext_resource type="Script" uid="uid://bugftf40hxy21" path="res://world/zone_area.gd" id="2_tcf2h"]
+[ext_resource type="Script" uid="uid://1edfyd8jq34u" path="res://systems/day_night.gd" id="3_4717r"]
+[ext_resource type="Script" uid="uid://idetmabmjxtc" path="res://world/area_underwater.gd" id="4_h5o24"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_g312j"]
+sky_top_color = Color(0.38431373, 0.45490196, 0.54901963, 1)
+sky_horizon_color = Color(0.55976933, 0.6941492, 0.7609434, 1)
+ground_bottom_color = Color(0.2, 0.16862746, 0.13333334, 1)
+ground_horizon_color = Color(0.55976933, 0.6941492, 0.7609434, 1)
+use_debanding = false
+energy_multiplier = 0.99999994
+
+[sub_resource type="Sky" id="Sky_6xmxd"]
+sky_material = SubResource("ProceduralSkyMaterial_g312j")
+
+[sub_resource type="Environment" id="Environment_tcf2h"]
+background_mode = 2
+sky = SubResource("Sky_6xmxd")
+ambient_light_source = 3
+ambient_light_sky_contribution = 0.3
+ssao_enabled = true
+ssao_radius = 2.0
+sdfgi_use_occlusion = true
+glow_enabled = true
+glow_bloom = 0.3
+fog_light_color = Color(0.4496724, 0.565077, 0.6676659, 1)
+fog_light_energy = 2.0
+fog_sun_scatter = 0.09
+fog_density = 0.005
+fog_aerial_perspective = 0.5
+fog_sky_affect = 0.6
+volumetric_fog_enabled = true
+volumetric_fog_density = 0.03
+volumetric_fog_albedo = Color(0.3809308, 0.49494654, 0.5418105, 1)
+volumetric_fog_anisotropy = 0.3
+volumetric_fog_sky_affect = 0.3
+
+[sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_g4v7s"]
+
+[sub_resource type="Curve" id="Curve_4717r"]
+_limits = [0.0, 1.0, 0.0, 24.0]
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(5.5018044, 0), 0.0, 0.0, 0, 0, Vector2(6.6281586, 1), 0.0, 0.0, 0, 0, Vector2(17.71841, 1), 0.0, 0.0, 0, 0, Vector2(18.411552, 0), 0.0, 0.0, 0, 0]
+point_count = 5
+
+[sub_resource type="Curve" id="Curve_h5o24"]
+_limits = [0.0, 1.0, 0.0, 24.0]
+_data = [Vector2(0, 0.48947364), 0.0, 0.0, 0, 0, Vector2(5.67509, 0.48947364), 0.0, 0.0, 0, 0, Vector2(6.714801, 0), 0.0, 0.0, 0, 0, Vector2(17.63177, 0), 0.0, 0.0, 0, 0, Vector2(18.411552, 0.49999994), 0.0, 0.0, 0, 0, Vector2(24, 0.49999994), 0.0, 0.0, 0, 0]
+point_count = 6
+
+[sub_resource type="Curve" id="Curve_mmdvd"]
+_limits = [0.0, 1.0, 0.0, 24.0]
+_data = [Vector2(0, 0.49734044), 0.0, 0.0, 0, 0, Vector2(5.60177, 0.49734044), 0.0, 0.0, 0, 0, Vector2(6.5415163, 1), 0.0, 0.0, 0, 0, Vector2(17.285198, 1), 0.0, 0.0, 0, 0, Vector2(18.451328, 0.50265956), 0.0, 0.0, 0, 0, Vector2(24, 0.50265956), 0.0, 0.0, 0, 0]
+point_count = 6
+
+[sub_resource type="Gradient" id="Gradient_4717r"]
+offsets = PackedFloat32Array(0.4265306, 0.5054878, 0.5653061)
+colors = PackedColorArray(0, 0.015999984, 0.06, 1, 0.21865767, 0.27463353, 0.37013638, 1, 0.38431373, 0.45490196, 0.54901963, 1)
+
+[sub_resource type="Gradient" id="Gradient_h5o24"]
+offsets = PackedFloat32Array(0.43061224, 0.50182927, 0.5408537, 0.57987803)
+colors = PackedColorArray(0, 0, 0, 1, 0.38150293, 0.22535303, 0.15159303, 1, 0.6792518, 0.42702276, 0.28049868, 1, 0.55976933, 0.6941492, 0.7609434, 1)
+
+[sub_resource type="Gradient" id="Gradient_mmdvd"]
+offsets = PackedFloat32Array(0.45, 0.55)
+colors = PackedColorArray(0, 0, 0, 1, 0.2, 0.16862746, 0.13333334, 1)
+
+[sub_resource type="SphereMesh" id="SphereMesh_g4v7s"]
+radius = 10.0
+height = 20.0
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_h5o24"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_yf5fn"]
+disable_fog = true
+emission_enabled = true
+emission = Color(1, 1, 1, 1)
+rim = 0.0
+rim_tint = 0.58
+rim_texture = SubResource("NoiseTexture2D_h5o24")
+backlight_enabled = true
+disable_receive_shadows = true
+stencil_flags = 2
+stencil_outline_thickness = 0.282
+
+[sub_resource type="SphereMesh" id="SphereMesh_4717r"]
+radius = 15.0
+height = 30.0
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_4717r"]
+shading_mode = 0
+disable_fog = true
+albedo_color = Color(3682719500000, 3682719500000, 3682719500000, 1)
+disable_receive_shadows = true
+grow_amount = 16.0
+stencil_flags = 2
+stencil_outline_thickness = 0.282
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_g4v7s"]
+height = 4.338867
+radius = 21.493652
+
+[node name="World" type="Node3D" unique_id=935456140]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1837391959]
+environment = SubResource("Environment_tcf2h")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." unique_id=1333743223]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" unique_id=994497644]
+shape = SubResource("WorldBoundaryShape3D_g4v7s")
+disabled = true
+
+[node name="blockout01" parent="." unique_id=1198116624 instance=ExtResource("1_6xmxd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.13928223, 0, -0.14178514)
+
+[node name="ZoneVillage" type="Area3D" parent="." unique_id=1552980619]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -35.978134, 0, 0.3661394)
+script = ExtResource("2_tcf2h")
+zone = "Village"
+
+[node name="CollisionPolygon3D" type="CollisionPolygon3D" parent="ZoneVillage" unique_id=409163970]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 0, 0)
+depth = 5.395
+polygon = PackedVector2Array(-15.799919, 0.14962243, -12.229134, 13.174361, -1.7017822, 19.179558, 6.3153076, 16.966248, 11.398977, 8.258189, 13.703032, 2.7457035, 14.17704, -4.517359, 10.283842, -13.662826, 3.9418335, -17.709003, -6.169075, -15.875314, -13.25415, -8.842095)
+debug_color = Color(0, 0.5950001, 0.7, 1)
+
+[node name="ZoneForest" type="Area3D" parent="." unique_id=1219547989]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.1357536, 0, 0.3661394)
+script = ExtResource("2_tcf2h")
+zone = "Forest"
+
+[node name="CollisionPolygon3D" type="CollisionPolygon3D" parent="ZoneForest" unique_id=1882758607]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 0, 0)
+depth = 5.395
+polygon = PackedVector2Array(-17.916288, 0.35579813, -19.201504, 6.189988, -17.978, 14.55852, -13.496443, 19.1208, -3.1563063, 21.316788, 4.283446, 19.345833, 17.037704, 16.018671, 22.698242, 9.995195, 24.147747, 1.4739493, 23.171871, -6.099437, 17.040955, -12.576163, 8.89829, -16.171085, 4.282299, -15.749639, -0.8548269, -12.798051, -5.9985676, -13.512523, -10.482676, -11.860951, -16.113142, -11.96114, -17.334148, -5.002657)
+debug_color = Color(0, 0.5950001, 0.7, 1)
+
+[node name="ZoneCave" type="Area3D" parent="." unique_id=2084175130]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 24.643816, 0, -2.8293133)
+script = ExtResource("2_tcf2h")
+zone = "Cave"
+
+[node name="CollisionPolygon3D" type="CollisionPolygon3D" parent="ZoneCave" unique_id=1575991700]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 9.475042, 0, 0)
+depth = 5.395
+polygon = PackedVector2Array(-8.080065, -5.422209, -8.8783245, 2.497861, -4.5053463, 10.240976, 0.24359512, 13.604605, 5.170313, 14.375727, 9.334654, 9.511537, 11.127691, 4.8621693, 10.964849, -0.051695347, 8.076189, -5.8044734, 4.293127, -10.48325, -0.19071007, -12.514333, -5.269306, -9.6123085)
+debug_color = Color(0, 0.5950001, 0.7, 1)
+
+[node name="ZoneLake" type="Area3D" parent="." unique_id=542493329]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.2891865, 5.722046e-06, 28.7576)
+script = ExtResource("2_tcf2h")
+zone = "Lake"
+
+[node name="CollisionPolygon3D" type="CollisionPolygon3D" parent="ZoneLake" unique_id=1123904892]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 0, 0)
+depth = 5.395
+polygon = PackedVector2Array(-1.5777745, 13.516931, 1.6806767, 12.853441, 5.9763823, 10.9179535, 10.232306, 8.800882, 10.836962, 5.7977123, 12.592045, 0.16483688, 12.093742, -5.5151806, 10.372091, -10.555952, 6.9587193, -14.637167, 2.6963444, -18.031446, -1.2498145, -18.228132, -5.5877304, -15.973364, -9.710751, -11.971071, -12.755173, -7.6908436, -13.853842, -1.9564781, -13.929752, 4.3291073, -12.669172, 8.413601, -8.369027, 11.846722, -5.0385, 13.341766)
+debug_color = Color(0, 0.5950001, 0.7, 1)
+
+[node name="Offset" type="Node3D" parent="." unique_id=858739573]
+transform = Transform3D(0.7646599, 0.64443403, 0, -0.64443403, 0.7646599, 0, 0, 0, 1, 0, 0, 0)
+
+[node name="DayNight" type="Node3D" parent="Offset" unique_id=1782487728]
+transform = Transform3D(0.99999994, 0, 0, 0, -0.7043243, -0.70987815, 0, 0.7098782, -0.70432425, 0, 0, 0)
+script = ExtResource("3_4717r")
+time_of_day = 8.985
+sun_energy = SubResource("Curve_4717r")
+moon_energy = SubResource("Curve_h5o24")
+sky = SubResource("ProceduralSkyMaterial_g312j")
+sky_energy = SubResource("Curve_mmdvd")
+top_color_gradient = SubResource("Gradient_4717r")
+horizon_color_gradient = SubResource("Gradient_h5o24")
+bottom_color_gradient = SubResource("Gradient_mmdvd")
+
+[node name="Sun" type="DirectionalLight3D" parent="Offset/DayNight" unique_id=1554296613]
+transform = Transform3D(1.0000001, 0, 0, 0, -4.3711392e-08, -1, 0, 1.0000001, -4.371139e-08, 0, -100, 0)
+shadow_enabled = true
+shadow_bias = 0.05
+shadow_blur = 0.5
+
+[node name="Moon" type="DirectionalLight3D" parent="Offset/DayNight" unique_id=10836116]
+transform = Transform3D(1.0000001, 0, 0, 0, -4.3711392e-08, 1, 0, -1.0000001, -4.371139e-08, 0, 100, 0)
+light_color = Color(0.067791924, 0.15672952, 0.290122, 1)
+light_energy = 0.0
+shadow_enabled = true
+sky_mode = 1
+
+[node name="MoonMesh" type="MeshInstance3D" parent="Offset/DayNight" unique_id=1116448893]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 200, 0)
+cast_shadow = 0
+mesh = SubResource("SphereMesh_g4v7s")
+surface_material_override/0 = SubResource("StandardMaterial3D_yf5fn")
+
+[node name="SunMesh" type="MeshInstance3D" parent="Offset/DayNight" unique_id=1589670516]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 200, 0)
+visible = false
+cast_shadow = 0
+mesh = SubResource("SphereMesh_4717r")
+surface_material_override/0 = SubResource("StandardMaterial3D_4717r")
+
+[node name="AreaUnderwater" type="Area3D" parent="." unique_id=1155904062]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 0, 32)
+script = ExtResource("4_h5o24")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="AreaUnderwater" unique_id=2084667517]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -2.1694336, 0)
+shape = SubResource("CylinderShape3D_g4v7s")

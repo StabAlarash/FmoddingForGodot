@@ -1,0 +1,5 @@
+[gd_scene format=3 uid="uid://b8bm1twjtch20"]
+
+[ext_resource type="PackedScene" uid="uid://cssirwkcu45r8" path="res://assets/models/gltf/house_bb.glb" id="1_x4eal"]
+
+[node name="HouseBB" unique_id=313897175 instance=ExtResource("1_x4eal")]

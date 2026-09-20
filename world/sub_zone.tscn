@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://dj8n0qpiyjnby"]
+
+[ext_resource type="Script" uid="uid://btbsidkb4sn3s" path="res://world/sub_zone.gd" id="1_7g5vx"]
+
+[node name="SubZone" type="Area3D" unique_id=887187522]
+script = ExtResource("1_7g5vx")

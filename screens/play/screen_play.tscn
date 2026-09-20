@@ -1,0 +1,167 @@
+[gd_scene format=3 uid="uid://cb0wfmjoxflos"]
+
+[ext_resource type="PackedScene" uid="uid://bb42lgetvpcqs" path="res://world/world.tscn" id="1_cgj5r"]
+[ext_resource type="Script" uid="uid://cw4catwfsnhsi" path="res://screens/play/screen_play.gd" id="1_ytnru"]
+[ext_resource type="PackedScene" uid="uid://cc1m2a1obsyn4" path="res://addons/fpc/character.tscn" id="2_65fjy"]
+[ext_resource type="Script" uid="uid://k65p5482dl7v" path="res://screens/play/world_gui.gd" id="3_bru6y"]
+[ext_resource type="PackedScene" uid="uid://k32jb54jo8hx" path="res://screens/options/screen_options.tscn" id="4_jawh6"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_ogbxy"]
+font_size = 32
+outline_size = 12
+outline_color = Color(0, 0, 0, 1)
+shadow_size = 12
+shadow_color = Color(0, 0, 0, 1)
+shadow_offset = Vector2(0, 2)
+
+[node name="ScreenPlay" type="Node" unique_id=1671506322]
+script = ExtResource("1_ytnru")
+
+[node name="screen_options" parent="." unique_id=2007812611 instance=ExtResource("4_jawh6")]
+visible = false
+
+[node name="World" parent="." unique_id=935456140 instance=ExtResource("1_cgj5r")]
+
+[node name="Character" parent="." unique_id=1664366571 instance=ExtResource("2_65fjy")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -30.893, 0, 1.949)
+view_tilting = true
+
+[node name="WorldGUI" type="Control" parent="." unique_id=851712245]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+script = ExtResource("3_bru6y")
+metadata/_edit_lock_ = true
+
+[node name="PanelContainer" type="PanelContainer" parent="WorldGUI" unique_id=496180064]
+layout_mode = 0
+offset_left = 16.0
+offset_top = 16.0
+offset_right = 266.0
+offset_bottom = 216.0
+mouse_filter = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="WorldGUI/PanelContainer" unique_id=628277831]
+layout_mode = 2
+mouse_filter = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="VBoxContainer" type="VBoxContainer" parent="WorldGUI/PanelContainer/MarginContainer" unique_id=1168589396]
+layout_mode = 2
+mouse_filter = 2
+
+[node name="ContainerTime" type="HBoxContainer" parent="WorldGUI/PanelContainer/MarginContainer/VBoxContainer" unique_id=471160283]
+layout_mode = 2
+mouse_filter = 2
+
+[node name="lbl_time" type="Label" parent="WorldGUI/PanelContainer/MarginContainer/VBoxContainer/ContainerTime" unique_id=1103336542]
+layout_mode = 2
+text = "Time"
+
+[node name="lbl_time_value" type="Label" parent="WorldGUI/PanelContainer/MarginContainer/VBoxContainer/ContainerTime" unique_id=1469935422]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+text = "00:00"
+horizontal_alignment = 2
+
+[node name="ContainerZone" type="HBoxContainer" parent="WorldGUI/PanelContainer/MarginContainer/VBoxContainer" unique_id=1342482070]
+layout_mode = 2
+mouse_filter = 2
+
+[node name="lbl_zone" type="Label" parent="WorldGUI/PanelContainer/MarginContainer/VBoxContainer/ContainerZone" unique_id=1233406282]
+layout_mode = 2
+text = "Zone"
+
+[node name="lbl_zone_value" type="Label" parent="WorldGUI/PanelContainer/MarginContainer/VBoxContainer/ContainerZone" unique_id=288396547]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+text = "ZONE_NAME"
+horizontal_alignment = 2
+
+[node name="ContainerSubZone" type="HBoxContainer" parent="WorldGUI/PanelContainer/MarginContainer/VBoxContainer" unique_id=1156218758]
+layout_mode = 2
+mouse_filter = 2
+
+[node name="lbl_subzone" type="Label" parent="WorldGUI/PanelContainer/MarginContainer/VBoxContainer/ContainerSubZone" unique_id=949263281]
+layout_mode = 2
+text = "SubZone"
+
+[node name="lbl_subzone_value" type="Label" parent="WorldGUI/PanelContainer/MarginContainer/VBoxContainer/ContainerSubZone" unique_id=327293153]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+text = "SUBZONE_NAME"
+horizontal_alignment = 2
+
+[node name="ContainerSurface" type="HBoxContainer" parent="WorldGUI/PanelContainer/MarginContainer/VBoxContainer" unique_id=380777115]
+layout_mode = 2
+mouse_filter = 2
+
+[node name="lbl_surface" type="Label" parent="WorldGUI/PanelContainer/MarginContainer/VBoxContainer/ContainerSurface" unique_id=1241229382]
+layout_mode = 2
+text = "Surface"
+
+[node name="lbl_surface_value" type="Label" parent="WorldGUI/PanelContainer/MarginContainer/VBoxContainer/ContainerSurface" unique_id=1379458487]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+text = "SURFACE_NAME"
+horizontal_alignment = 2
+
+[node name="ContainerUnderwater" type="HBoxContainer" parent="WorldGUI/PanelContainer/MarginContainer/VBoxContainer" unique_id=60756587]
+layout_mode = 2
+mouse_filter = 2
+
+[node name="lbl_underwater" type="Label" parent="WorldGUI/PanelContainer/MarginContainer/VBoxContainer/ContainerUnderwater" unique_id=1936966444]
+layout_mode = 2
+text = "Underwater"
+
+[node name="lbl_underwater_value" type="Label" parent="WorldGUI/PanelContainer/MarginContainer/VBoxContainer/ContainerUnderwater" unique_id=1235073138]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+text = "VALUE"
+horizontal_alignment = 2
+
+[node name="ContainerTension" type="HBoxContainer" parent="WorldGUI/PanelContainer/MarginContainer/VBoxContainer" unique_id=2078881900]
+layout_mode = 2
+mouse_filter = 2
+
+[node name="lbl_tension" type="Label" parent="WorldGUI/PanelContainer/MarginContainer/VBoxContainer/ContainerTension" unique_id=823867317]
+layout_mode = 2
+text = "Tension"
+
+[node name="lbl_tension_value" type="Label" parent="WorldGUI/PanelContainer/MarginContainer/VBoxContainer/ContainerTension" unique_id=399824208]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+text = "TENSION"
+horizontal_alignment = 2
+
+[node name="Music" type="FmodEventEmitter3D" parent="." unique_id=1889495696]
+event_name = "event:/Music_Main"
+event_guid = "{0d057b78-7278-4d10-a191-1a6400f10125}"
+attached = false
+autoplay = true
+
+[node name="CenterContainer" type="CenterContainer" parent="." unique_id=745824924]
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 125.0
+grow_horizontal = 2
+mouse_filter = 2
+
+[node name="lbl_interactable" type="Label" parent="CenterContainer" unique_id=1138300932]
+unique_name_in_owner = true
+layout_mode = 2
+text = "SOMETHING"
+label_settings = SubResource("LabelSettings_ogbxy")

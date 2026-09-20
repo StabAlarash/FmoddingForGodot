@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://d140bdtlr6ih2"]
+
+[ext_resource type="PackedScene" uid="uid://b5osr6rcf6gdv" path="res://assets/models/gltf/house_bc.glb" id="1_2ykv5"]
+[ext_resource type="PackedScene" uid="uid://dj8n0qpiyjnby" path="res://world/sub_zone.tscn" id="2_denea"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_tq88w"]
+size = Vector3(4.2142487, 2.912918, 5.7189255)
+
+[node name="HouseBC" unique_id=1702282528 instance=ExtResource("1_2ykv5")]
+
+[node name="SubZone" parent="." index="2" unique_id=887187522 instance=ExtResource("2_denea")]
+text = "InsideBuilding"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="SubZone" index="0" unique_id=845055750]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00844574, 1.4849014, 0.005329132)
+shape = SubResource("BoxShape3D_tq88w")

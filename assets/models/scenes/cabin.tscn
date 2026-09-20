@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://dk4ru0n1ch7kg"]
+
+[ext_resource type="PackedScene" uid="uid://b21o31tka80fy" path="res://assets/models/gltf/cabin.glb" id="1_8it0r"]
+[ext_resource type="PackedScene" uid="uid://dj8n0qpiyjnby" path="res://world/sub_zone.tscn" id="2_80h1f"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_ob67j"]
+size = Vector3(2.5887928, 2.4245186, 4.0128436)
+
+[node name="Cabin" unique_id=800326491 instance=ExtResource("1_8it0r")]
+
+[node name="SubZone" parent="." index="3" unique_id=887187522 instance=ExtResource("2_80h1f")]
+text = "InsideBuilding"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="SubZone" index="0" unique_id=28441670]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.025349617, 1.1095562, -0.025550127)
+shape = SubResource("BoxShape3D_ob67j")
