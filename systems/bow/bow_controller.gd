@@ -7,15 +7,12 @@ const ArrowScene := preload("res://systems/bow/arrow.tscn")
 
 enum BowState { IDLE, DRAWING, RELOADING }
 
-# Bow pose relative to the camera.
-const HIP_POS := Vector3(0.28, -0.26, -0.7)
-const HIP_ROT := Vector3(0.0, 6.0, -10.0) # degrees
-# Focused pose: nudged right so the crosshair sits inside the bow's sight window.
-const AIM_POS := Vector3(0.03, -0.02, -0.75)
-const AIM_ROT := Vector3(0.05, 0.07, 0.0) # degrees
-
 @export var bow: Bow
-@export var hud: Control
+@export_group("Bow pose")
+@export var hip_pose: Node3D ## bow placement when not focusing, a child of the camera
+@export var aim_pose: Node3D ## bow placement while focusing, a child of the camera
+@export var aim_fov := 55.0 ## narrower than the character's 75 default while focusing
+@export_group("Shooting")
 @export var draw_time := 1.2 ## seconds to reach full draw
 @export var min_charge := 0.15 ## releasing below this cancels the shot
 @export var min_arrow_speed := 10.0 ## m/s at minimum charge
@@ -43,21 +40,24 @@ func _unhandled_input(event: InputEvent) -> void:
 
 func _process(delta: float) -> void:
 	var captured := Input.mouse_mode == Input.MOUSE_MODE_CAPTURED
-	aiming = captured and Input.is_action_pressed("weapon_second")
-	_update_bow_state(delta, captured)
+	if not captured:
+		return
+	aiming = Input.is_action_pressed("weapon_second")
+	character.focus_fov = aim_fov if aiming else 0.0
+	_update_bow_state(delta)
 	_update_bow_visuals(delta)
 
 
-func _update_bow_state(delta: float, captured: bool) -> void:
+func _update_bow_state(delta: float) -> void:
 	match state:
 		BowState.IDLE:
-			if captured and Input.is_action_just_pressed("weapon_main"):
+			if Input.is_action_just_pressed("weapon_main"):
 				state = BowState.DRAWING
 				charge = 0.0
 		BowState.DRAWING:
 			charge = minf(charge + delta / draw_time, 1.0)
-			if not captured or not Input.is_action_pressed("weapon_main"):
-				if captured and charge >= min_charge:
+			if not Input.is_action_pressed("weapon_main"):
+				if charge >= min_charge:
 					_fire()
 				else:
 					state = BowState.IDLE
@@ -104,12 +104,11 @@ func _update_bow_visuals(delta: float) -> void:
 
 	# Arms shake slightly at full draw unless the shot is focused.
 	var tremble := (1.0 - aim_t) * 0.0015 * smoothstep(0.8, 1.0, charge)
-	var pos := HIP_POS.lerp(AIM_POS, aim_t)
+	var pos := hip_pose.position.lerp(aim_pose.position, aim_t)
 	pos += Vector3(randf_range(-1, 1), randf_range(-1, 1), 0.0) * tremble
 	pos.z += kick * 0.04
 	bow.position = pos
-	bow.rotation_degrees = HIP_ROT.lerp(AIM_ROT, aim_t)
+	bow.rotation_degrees = hip_pose.rotation_degrees.lerp(aim_pose.rotation_degrees, aim_t)
 
 	bow.set_draw(charge)
 	bow.set_arrow_visible(state != BowState.RELOADING)
-	hud.update_state(charge, aim_t)

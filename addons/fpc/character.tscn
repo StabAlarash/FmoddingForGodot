@@ -7,9 +7,8 @@
 [ext_resource type="Script" uid="uid://u5u7xxlvmcxx" path="res://addons/fpc/debug.gd" id="3_x1wcc"]
 [ext_resource type="Script" uid="uid://bjb6pgoxyd6bj" path="res://systems/foot_step.gd" id="4_bx7cj"]
 [ext_resource type="Script" uid="uid://7mcd11ul03e3" path="res://systems/character_sounds.gd" id="7_4fv23"]
-[ext_resource type="PackedScene" path="res://systems/bow/bow.tscn" id="8_bow"]
-[ext_resource type="Script" path="res://systems/bow/bow_controller.gd" id="9_bowctl"]
-[ext_resource type="Script" path="res://systems/bow/bow_hud.gd" id="10_bowhud"]
+[ext_resource type="PackedScene" uid="uid://b6il1x6mbhrns" path="res://systems/bow/bow.tscn" id="8_bow"]
+[ext_resource type="Script" uid="uid://dhmxc4gwqe76i" path="res://systems/bow/bow_controller.gd" id="9_bowctl"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_kp17n"]
 albedo_color = Color(0.909804, 0.596078, 0, 1)
@@ -457,24 +456,22 @@ collide_with_areas = true
 collide_with_bodies = false
 script = ExtResource("3_gv6je")
 
-[node name="Bow" parent="Head/Camera" instance=ExtResource("8_bow")]
+[node name="Bow" parent="Head/Camera" unique_id=1109236811 instance=ExtResource("8_bow")]
 
-[node name="BowController" type="Node" parent="Head/Camera" node_paths=PackedStringArray("bow", "hud")]
+[node name="HipPose" type="Node3D" parent="Head/Camera" unique_id=397451326]
+transform = Transform3D(0.9669789, 0.2548456, 0.0023190663, -0.25477228, 0.96638817, 0.03442623, 0.006532269, -0.033880252, 0.99940455, 0.28, -0.26, -0.7)
+
+[node name="AimPose" type="Node3D" parent="Head/Camera" unique_id=1001222499]
+transform = Transform3D(0.999999, 0, -0.001222, 1e-06, 1, 0.000873, 0.001222, -0.000873, 0.999999, 0.03, -0.02, -0.75)
+
+[node name="BowController" type="Node" parent="Head/Camera" unique_id=498702430 node_paths=PackedStringArray("bow", "hip_pose", "aim_pose")]
 script = ExtResource("9_bowctl")
 bow = NodePath("../Bow")
-hud = NodePath("BowHudLayer/BowHud")
-
-[node name="BowHudLayer" type="CanvasLayer" parent="Head/Camera/BowController"]
-
-[node name="BowHud" type="Control" parent="Head/Camera/BowController/BowHudLayer"]
-layout_mode = 3
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-mouse_filter = 2
-script = ExtResource("10_bowhud")
+hip_pose = NodePath("../HipPose")
+aim_pose = NodePath("../AimPose")
+aim_fov = 50.0
+min_arrow_speed = 5.0
+max_arrow_speed = 30.0
 
 [node name="HeadbobAnimation" type="AnimationPlayer" parent="Head" unique_id=2050130428]
 libraries/ = SubResource("AnimationLibrary_o0unb")
