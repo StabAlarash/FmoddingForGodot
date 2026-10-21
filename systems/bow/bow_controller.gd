@@ -1,16 +1,18 @@
+class_name BowController
 extends Node
 ## Bow handling for the FPS character. Hold weapon_main (LMB) to draw, release to shoot.
 ## Hold weapon_second (RMB) to center the bow and focus the shot (no spread).
-## Lives under the character's camera; the bow model is a sibling of this node.
+## Lives in the WeaponContainer under the character's camera; the bow model is a sibling of this node.
 
 const ArrowScene := preload("res://systems/bow/arrow.tscn")
 
 enum BowState { IDLE, DRAWING, RELOADING }
 
 @export var bow: Bow
+@export var camera: Camera3D
 @export_group("Bow pose")
-@export var hip_pose: Node3D ## bow placement when not focusing, a child of the camera
-@export var aim_pose: Node3D ## bow placement while focusing, a child of the camera
+@export var hip_pose: Node3D ## bow placement when not focusing, a child of the weapon container
+@export var aim_pose: Node3D ## bow placement while focusing, a child of the weapon container
 @export var aim_fov := 55.0 ## narrower than the character's 75 default while focusing
 @export_group("Shooting")
 @export var draw_time := 1.2 ## seconds to reach full draw
@@ -28,7 +30,6 @@ var reload_left := 0.0
 var kick := 0.0
 
 @onready var character: CharacterBody3D = owner as CharacterBody3D
-@onready var camera: Camera3D = get_parent() as Camera3D
 
 
 func _unhandled_input(event: InputEvent) -> void:
