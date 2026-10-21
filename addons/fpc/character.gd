@@ -5,6 +5,9 @@
 class_name FPSCharacter
 extends CharacterBody3D
 
+signal jumped
+signal landed
+
 
 #region Character Export Group
 
@@ -215,11 +218,13 @@ func _handle_jumping() -> void:
 				if jump_animation:
 					JUMP_ANIMATION.play("jump", 0.25)
 				velocity.y += jump_velocity # Adding instead of setting so jumping on slopes works properly
+				jumped.emit()
 		else:
 			if Input.is_action_just_pressed(controls.JUMP) and is_on_floor() and !low_ceiling:
 				if jump_animation:
 					JUMP_ANIMATION.play("jump", 0.25)
 				velocity.y += jump_velocity
+				jumped.emit()
 
 
 func _handle_movement(delta : float, input_dir : Vector2) -> void:
@@ -433,6 +438,8 @@ func _play_jump_animation() -> void:
 			JUMP_ANIMATION.play("land_left", 0.25)
 		else:
 			JUMP_ANIMATION.play("land_center", 0.25)
+			
+		landed.emit()
 
 #endregion
 

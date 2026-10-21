@@ -22,6 +22,6 @@ func _input(_event):
 func _on_interactable_changed():
 	var interactable:Interactable = Game.interactable
 	if interactable:
-		lbl_interactable.text = interactable.text
+		lbl_interactable.text = "[E] " + interactable.text
 	else:
 		lbl_interactable.text = ""

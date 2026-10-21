@@ -5,6 +5,7 @@ var time:float = 0.0:
 	set(value):
 		time = value
 		time_changed.emit()
+		FmodServer.set_global_parameter_by_name("Time", time)
 
 signal zone_changed
 var zone: String:
@@ -14,11 +15,11 @@ var zone: String:
 		FmodServer.set_global_parameter_by_name_with_label("Zone", zone)
 
 signal subzone_changed
-var subzone: String:
+var subzone: String = "None":
 	set(value):
 		subzone = value
 		subzone_changed.emit()
-		#FmodServer.set_global_parameter_by_name_with_label("Zone", zone)
+		FmodServer.set_global_parameter_by_name_with_label("SubZone", subzone)
 
 signal tension_changed
 var tension:float = 0.0:
