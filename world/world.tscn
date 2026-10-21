@@ -208,3 +208,7 @@ script = ExtResource("4_h5o24")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="AreaUnderwater" unique_id=2084667517]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -2.1694336, 0)
 shape = SubResource("CylinderShape3D_g4v7s")
+
+[node name="FmodEventEmitter3D" type="FmodEventEmitter3D" parent="AreaUnderwater" unique_id=452557845]
+event_name = "snapshot:/UnderWater"
+event_guid = "{cc3d1c8b-5793-42dd-84bc-f69ac8a0faab}"

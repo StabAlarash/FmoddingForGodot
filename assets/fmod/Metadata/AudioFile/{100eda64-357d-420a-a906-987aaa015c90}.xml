@@ -2,7 +2,7 @@
 <objects serializationModel="Studio.02.03.00">
 	<object class="AudioFile" id="{100eda64-357d-420a-a906-987aaa015c90}">
 		<property name="assetPath">
-			<value>Mystical Town (Loop).wav</value>
+			<value>Music/Mystical Town (Loop).wav</value>
 		</property>
 		<property name="isStreaming">
 			<value>true</value>

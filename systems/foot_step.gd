@@ -30,7 +30,6 @@ func _process(delta):
 					if extra.has("surface"):
 						surface = extra["surface"]
 					
-		#print(surface)
 		fmod_event_emitter.set_parameter("Surface", surface)
 		Globals.surface = surface
 		

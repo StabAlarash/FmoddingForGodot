@@ -6,6 +6,7 @@
 [ext_resource type="Script" uid="uid://dgfl3skp075ft" path="res://addons/fpc/EditorModule.gd" id="3_v3ckk"]
 [ext_resource type="Script" uid="uid://u5u7xxlvmcxx" path="res://addons/fpc/debug.gd" id="3_x1wcc"]
 [ext_resource type="Script" uid="uid://bjb6pgoxyd6bj" path="res://systems/foot_step.gd" id="4_bx7cj"]
+[ext_resource type="Script" uid="uid://7mcd11ul03e3" path="res://systems/character_sounds.gd" id="7_4fv23"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_kp17n"]
 albedo_color = Color(0.909804, 0.596078, 0, 1)
@@ -503,9 +504,29 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0834302, 0)
 target_position = Vector3(0, -0.1, 0)
 
 [node name="FmodEventEmitter3D" type="FmodEventEmitter3D" parent="FootStep" unique_id=1915364197]
-event_name = "event:/FootStep"
+event_name = "event:/Player/FootStep"
 event_guid = "{7ccba8d0-0362-4a2f-a554-e90d3195f993}"
 fmod_parameters/Surface/id = -5850086630009878208
 fmod_parameters/Surface = "Wood"
 fmod_parameters/Surface/labels = PackedStringArray("Wood", "Grass", "Carpet")
+fmod_parameters/Surface/variant_type = 4
+
+[node name="CharacterSounds" type="Node3D" parent="." unique_id=1517020942 node_paths=PackedStringArray("character")]
+script = ExtResource("7_4fv23")
+character = NodePath("..")
+
+[node name="Jump" type="FmodEventEmitter3D" parent="CharacterSounds" unique_id=1535292103]
+event_name = "event:/Player/Jump"
+event_guid = "{cc748f4c-7a5f-4457-87c2-bd70ec08f82c}"
+fmod_parameters/Surface/id = -5850086630009878208
+fmod_parameters/Surface = "Wood"
+fmod_parameters/Surface/labels = PackedStringArray("Wood", "Grass", "Rock", "Dirt")
+fmod_parameters/Surface/variant_type = 4
+
+[node name="Landing" type="FmodEventEmitter3D" parent="CharacterSounds" unique_id=797002385]
+event_name = "event:/Player/Landing"
+event_guid = "{3b122091-6abf-4d16-8e36-3d7db1ad3b0f}"
+fmod_parameters/Surface/id = -5850086630009878208
+fmod_parameters/Surface = "Wood"
+fmod_parameters/Surface/labels = PackedStringArray("Wood", "Grass", "Rock", "Dirt")
 fmod_parameters/Surface/variant_type = 4
