@@ -7,6 +7,9 @@
 [ext_resource type="Script" uid="uid://u5u7xxlvmcxx" path="res://addons/fpc/debug.gd" id="3_x1wcc"]
 [ext_resource type="Script" uid="uid://bjb6pgoxyd6bj" path="res://systems/foot_step.gd" id="4_bx7cj"]
 [ext_resource type="Script" uid="uid://7mcd11ul03e3" path="res://systems/character_sounds.gd" id="7_4fv23"]
+[ext_resource type="PackedScene" path="res://systems/bow/bow.tscn" id="8_bow"]
+[ext_resource type="Script" path="res://systems/bow/bow_controller.gd" id="9_bowctl"]
+[ext_resource type="Script" path="res://systems/bow/bow_hud.gd" id="10_bowhud"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_kp17n"]
 albedo_color = Color(0.909804, 0.596078, 0, 1)
@@ -453,6 +456,25 @@ target_position = Vector3(0, 0, -2)
 collide_with_areas = true
 collide_with_bodies = false
 script = ExtResource("3_gv6je")
+
+[node name="Bow" parent="Head/Camera" instance=ExtResource("8_bow")]
+
+[node name="BowController" type="Node" parent="Head/Camera" node_paths=PackedStringArray("bow", "hud")]
+script = ExtResource("9_bowctl")
+bow = NodePath("../Bow")
+hud = NodePath("BowHudLayer/BowHud")
+
+[node name="BowHudLayer" type="CanvasLayer" parent="Head/Camera/BowController"]
+
+[node name="BowHud" type="Control" parent="Head/Camera/BowController/BowHudLayer"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+script = ExtResource("10_bowhud")
 
 [node name="HeadbobAnimation" type="AnimationPlayer" parent="Head" unique_id=2050130428]
 libraries/ = SubResource("AnimationLibrary_o0unb")
