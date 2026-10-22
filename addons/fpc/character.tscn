@@ -9,7 +9,7 @@
 [ext_resource type="Script" uid="uid://7mcd11ul03e3" path="res://systems/character_sounds.gd" id="7_4fv23"]
 [ext_resource type="PackedScene" uid="uid://b6il1x6mbhrns" path="res://systems/bow/bow.tscn" id="8_bow"]
 [ext_resource type="Script" uid="uid://dhmxc4gwqe76i" path="res://systems/bow/bow_controller.gd" id="9_bowctl"]
-[ext_resource type="Script" path="res://systems/bow/weapon_sway.gd" id="10_sway"]
+[ext_resource type="Script" uid="uid://b8oo5q4jh3vd3" path="res://systems/bow/weapon_sway.gd" id="10_sway"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_kp17n"]
 albedo_color = Color(0.909804, 0.596078, 0, 1)
@@ -457,10 +457,11 @@ collide_with_areas = true
 collide_with_bodies = false
 script = ExtResource("3_gv6je")
 
-[node name="WeaponContainer" type="Node3D" parent="Head/Camera" node_paths=PackedStringArray("character", "controller")]
+[node name="WeaponContainer" type="Node3D" parent="Head/Camera" unique_id=975132929 node_paths=PackedStringArray("character", "controller")]
 script = ExtResource("10_sway")
 character = NodePath("../../..")
 controller = NodePath("BowController")
+bob_speed = 1.0
 
 [node name="Bow" parent="Head/Camera/WeaponContainer" unique_id=1109236811 instance=ExtResource("8_bow")]
 
@@ -470,7 +471,7 @@ transform = Transform3D(0.9669789, 0.2548456, 0.0023190663, -0.25477228, 0.96638
 [node name="AimPose" type="Node3D" parent="Head/Camera/WeaponContainer" unique_id=1001222499]
 transform = Transform3D(0.999999, 0, -0.001222, 1e-06, 1, 0.000873, 0.001222, -0.000873, 0.999999, 0.03, -0.02, -0.75)
 
-[node name="BowController" type="Node" parent="Head/Camera/WeaponContainer" unique_id=498702430 node_paths=PackedStringArray("bow", "camera", "hip_pose", "aim_pose")]
+[node name="BowController" type="Node" parent="Head/Camera/WeaponContainer" unique_id=498702430 node_paths=PackedStringArray("bow", "camera", "hip_pose", "aim_pose", "audio_draw", "audio_shoot")]
 script = ExtResource("9_bowctl")
 bow = NodePath("../Bow")
 camera = NodePath("../..")
@@ -479,6 +480,16 @@ aim_pose = NodePath("../AimPose")
 aim_fov = 50.0
 min_arrow_speed = 5.0
 max_arrow_speed = 30.0
+audio_draw = NodePath("../BowDraw")
+audio_shoot = NodePath("../BowShoot")
+
+[node name="BowDraw" type="FmodEventEmitter3D" parent="Head/Camera/WeaponContainer" unique_id=1552545733]
+event_name = "event:/Player/Bow/Bow Draw"
+event_guid = "{263da8b5-68dd-4243-8742-5703eed87aa0}"
+
+[node name="BowShoot" type="FmodEventEmitter3D" parent="Head/Camera/WeaponContainer" unique_id=1546629795]
+event_name = "event:/Player/Bow/Bow Shoot"
+event_guid = "{a25d383d-3362-47a1-aeef-0444c29f4ce0}"
 
 [node name="HeadbobAnimation" type="AnimationPlayer" parent="Head" unique_id=2050130428]
 libraries/ = SubResource("AnimationLibrary_o0unb")

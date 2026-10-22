@@ -31,6 +31,10 @@ var kick := 0.0
 
 @onready var character: CharacterBody3D = owner as CharacterBody3D
 
+@export_group("Audio")
+@export var audio_draw:FmodEventEmitter3D
+@export var audio_shoot:FmodEventEmitter3D
+
 
 func _unhandled_input(event: InputEvent) -> void:
 	# Swallow the click that recaptures the mouse so it doesn't start drawing the bow.
@@ -55,9 +59,11 @@ func _update_bow_state(delta: float) -> void:
 			if Input.is_action_just_pressed("weapon_main"):
 				state = BowState.DRAWING
 				charge = 0.0
+				audio_draw.play()
 		BowState.DRAWING:
 			charge = minf(charge + delta / draw_time, 1.0)
 			if not Input.is_action_pressed("weapon_main"):
+				audio_draw.stop()
 				if charge >= min_charge:
 					_fire()
 				else:
@@ -70,6 +76,7 @@ func _update_bow_state(delta: float) -> void:
 
 
 func _fire() -> void:
+	audio_shoot.play()
 	var cam_xf := camera.global_transform
 	var forward := -cam_xf.basis.z
 

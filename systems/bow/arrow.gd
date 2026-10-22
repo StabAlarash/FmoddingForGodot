@@ -4,6 +4,9 @@ extends Node3D
 ## Movement is swept with a raycast every physics frame so fast arrows never tunnel.
 ## The same scene (arrow.tscn) is also used as the inert nocked arrow on the bow.
 
+@onready var audio_woosh = $Woosh
+@onready var audio_hit = $Hit
+
 const LENGTH := 0.8 ## matches the mesh in assets/arrow.blend
 
 @export var gravity := 9.8
@@ -20,6 +23,7 @@ var _exclude: Array[RID] = []
 ## Fires the arrow. `tip` is where it appears, `ray_origin` is where the first
 ## collision sweep starts (the camera), so it can't skip a wall the player stands against.
 func launch(tip: Vector3, ray_origin: Vector3, initial_velocity: Vector3, shooter: CollisionObject3D = null) -> void:
+	audio_woosh.play()
 	global_position = tip
 	velocity = initial_velocity
 	_ray_from = ray_origin
@@ -62,15 +66,18 @@ func _orient() -> void:
 
 
 func _stick_into(hit: Dictionary) -> void:
+	audio_hit.play()
+	
 	_flying = false
 	var dir := velocity.normalized()
 	global_position = hit.position + dir * 0.08 # sink the tip slightly
 	var collider: Object = hit.collider
 
-	if collider is RigidBody3D:
-		var body := collider as RigidBody3D
-		body.apply_impulse(velocity * 0.1, hit.position - body.global_position)
-		reparent.call_deferred(body, true) # ride along with the object we hit
+	if collider is PhysicsBody3D:
+		if collider is RigidBody3D:
+			var body := collider as RigidBody3D
+			body.apply_impulse(velocity * 0.1, hit.position - body.global_position)
+		reparent.call_deferred(collider, true) # ride along with the object we hit
 	if collider.has_method("on_arrow_hit"):
 		collider.on_arrow_hit(hit.position, velocity)
 
