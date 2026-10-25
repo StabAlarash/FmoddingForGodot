@@ -4,12 +4,11 @@ extends Node
 ## Hold weapon_second (RMB) to center the bow and focus the shot (no spread).
 ## Lives in the WeaponContainer under the character's camera; the bow model is a sibling of this node.
 
-const ArrowScene := preload("res://systems/bow/arrow.tscn")
+const ArrowScene := preload("uid://bul5ptqb6rbb4")
 
 enum BowState { IDLE, DRAWING, RELOADING }
 
 @export var bow: Bow
-@export var camera: Camera3D
 @export_group("Bow pose")
 @export var hip_pose: Node3D ## bow placement when not focusing, a child of the weapon container
 @export var aim_pose: Node3D ## bow placement while focusing, a child of the weapon container
@@ -77,6 +76,7 @@ func _update_bow_state(delta: float) -> void:
 
 func _fire() -> void:
 	audio_shoot.play()
+	var camera: Camera3D = get_viewport().get_camera_3d()
 	var cam_xf := camera.global_transform
 	var forward := -cam_xf.basis.z
 

@@ -1,0 +1,31 @@
+[gd_scene format=3 uid="uid://bw3imdhdbe0nm"]
+
+[ext_resource type="Script" uid="uid://dhmxc4gwqe76i" path="res://player/bow/bow_controller.gd" id="1_ejhbp"]
+[ext_resource type="PackedScene" uid="uid://b6il1x6mbhrns" path="res://player/bow/bow.tscn" id="2_jhu1m"]
+
+[node name="WeaponBow" type="Node3D" unique_id=191322371 node_paths=PackedStringArray("bow", "hip_pose", "aim_pose", "audio_draw", "audio_shoot")]
+script = ExtResource("1_ejhbp")
+bow = NodePath("Bow")
+hip_pose = NodePath("HipPose")
+aim_pose = NodePath("AimPose")
+aim_fov = 50.0
+min_arrow_speed = 5.0
+max_arrow_speed = 30.0
+audio_draw = NodePath("BowDraw")
+audio_shoot = NodePath("BowShoot")
+
+[node name="Bow" parent="." unique_id=205253245 instance=ExtResource("2_jhu1m")]
+
+[node name="HipPose" type="Node3D" parent="." unique_id=337466664]
+transform = Transform3D(0.9669789, 0.2548456, 0.0023190663, -0.25477228, 0.96638817, 0.03442623, 0.006532269, -0.033880252, 0.99940455, 0.28, -0.26, -0.7)
+
+[node name="AimPose" type="Node3D" parent="." unique_id=321696078]
+transform = Transform3D(0.999999, 0, -0.001222, 1e-06, 1, 0.000873, 0.001222, -0.000873, 0.999999, 0.03, -0.01999998, -0.75)
+
+[node name="BowDraw" type="FmodEventEmitter3D" parent="." unique_id=1202815552]
+event_name = "event:/Player/Bow/Bow Draw"
+event_guid = "{263da8b5-68dd-4243-8742-5703eed87aa0}"
+
+[node name="BowShoot" type="FmodEventEmitter3D" parent="." unique_id=311602952]
+event_name = "event:/Player/Bow/Bow Shoot"
+event_guid = "{a25d383d-3362-47a1-aeef-0444c29f4ce0}"
