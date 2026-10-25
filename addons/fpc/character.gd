@@ -104,6 +104,8 @@ signal landed
 @export_enum("Hold to Crouch", "Toggle Crouch") var crouch_mode : int = 0
 ## Wether sprinting should effect FOV.
 @export var dynamic_fov : bool = true
+## Set by the bow while focusing; overrides the FOV target when above 0.
+var focus_fov : float = 0.0
 ## If the player holds down the jump button, should the player keep hopping.
 @export var continuous_jumping : bool = true
 ## Enables the view bobbing animation.
@@ -495,7 +497,9 @@ func change_reticle(reticle) -> void: # Yup, this function is kinda strange
 
 
 func _update_camera_fov() -> void:
-	if state == "sprinting":
+	if focus_fov > 0.0:
+		CAMERA.fov = lerp(CAMERA.fov, focus_fov, 0.3)
+	elif state == "sprinting":
 		CAMERA.fov = lerp(CAMERA.fov, 85.0, 0.3)
 	else:
 		CAMERA.fov = lerp(CAMERA.fov, 75.0, 0.3)

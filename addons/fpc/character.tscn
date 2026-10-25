@@ -6,7 +6,9 @@
 [ext_resource type="Script" uid="uid://dgfl3skp075ft" path="res://addons/fpc/EditorModule.gd" id="3_v3ckk"]
 [ext_resource type="Script" uid="uid://u5u7xxlvmcxx" path="res://addons/fpc/debug.gd" id="3_x1wcc"]
 [ext_resource type="Script" uid="uid://bjb6pgoxyd6bj" path="res://systems/foot_step.gd" id="4_bx7cj"]
+[ext_resource type="PackedScene" uid="uid://bw3imdhdbe0nm" path="res://player/bow/weapon_bow.tscn" id="5_q34qd"]
 [ext_resource type="Script" uid="uid://7mcd11ul03e3" path="res://systems/character_sounds.gd" id="7_4fv23"]
+[ext_resource type="Script" uid="uid://b8oo5q4jh3vd3" path="res://systems/weapon_sway.gd" id="10_sway"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_kp17n"]
 albedo_color = Color(0.909804, 0.596078, 0, 1)
@@ -453,6 +455,13 @@ target_position = Vector3(0, 0, -2)
 collide_with_areas = true
 collide_with_bodies = false
 script = ExtResource("3_gv6je")
+
+[node name="WeaponContainer" type="Node3D" parent="Head/Camera" unique_id=975132929 node_paths=PackedStringArray("character")]
+script = ExtResource("10_sway")
+character = NodePath("../../..")
+bob_speed = 1.0
+
+[node name="WeaponBow" parent="Head/Camera/WeaponContainer" unique_id=191322371 instance=ExtResource("5_q34qd")]
 
 [node name="HeadbobAnimation" type="AnimationPlayer" parent="Head" unique_id=2050130428]
 libraries/ = SubResource("AnimationLibrary_o0unb")

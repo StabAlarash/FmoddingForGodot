@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://bul5ptqb6rbb4"]
+
+[ext_resource type="Script" uid="uid://c6nwrqo8f5pph" path="res://player/bow/arrow.gd" id="1"]
+[ext_resource type="PackedScene" uid="uid://ccys8ikd8tx8c" path="res://assets/weapons/arrow.glb" id="2"]
+
+[node name="Arrow" type="Node3D" unique_id=1648454349]
+script = ExtResource("1")
+
+[node name="arrow" parent="." unique_id=1452471519 instance=ExtResource("2")]
+
+[node name="Woosh" type="FmodEventEmitter3D" parent="." unique_id=252227579]
+event_name = "event:/Player/Bow/Arrow Woosh"
+event_guid = "{a0612534-ec24-4929-9d7a-5328332f3aa7}"
+
+[node name="Hit" type="FmodEventEmitter3D" parent="." unique_id=2005250363]
+event_name = "event:/Player/Bow/Arrow Hit"
+event_guid = "{9360dad5-8a49-411a-864c-779c3690b8cf}"
