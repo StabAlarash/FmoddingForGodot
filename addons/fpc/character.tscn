@@ -462,6 +462,7 @@ character = NodePath("../../..")
 bob_speed = 1.0
 
 [node name="WeaponBow" parent="Head/Camera/WeaponContainer" unique_id=191322371 instance=ExtResource("5_q34qd")]
+max_arrow_speed = 40.0
 
 [node name="HeadbobAnimation" type="AnimationPlayer" parent="Head" unique_id=2050130428]
 libraries/ = SubResource("AnimationLibrary_o0unb")

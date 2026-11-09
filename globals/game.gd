@@ -5,3 +5,5 @@ var interactable:Interactable:
 	set(value):
 		interactable = value
 		interactable_changed.emit()
+
+signal context_requested(context:Context)
