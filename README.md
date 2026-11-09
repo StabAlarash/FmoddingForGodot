@@ -72,6 +72,16 @@ The FMOD project used by the game is located here: assets/fmod/project.fspro
 - **Door Open**
 - **Door Close**
 
+### Target
+
+- **Target Hit**
+
+### Challenge
+
+- **Challenge Start**
+- **Challenge Win**
+- **Challenge Lose**
+
 
 ## Available Parameters
 
