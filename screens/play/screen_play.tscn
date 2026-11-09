@@ -5,14 +5,9 @@
 [ext_resource type="PackedScene" uid="uid://cc1m2a1obsyn4" path="res://addons/fpc/character.tscn" id="2_65fjy"]
 [ext_resource type="Script" uid="uid://k65p5482dl7v" path="res://screens/play/world_gui.gd" id="3_bru6y"]
 [ext_resource type="PackedScene" uid="uid://k32jb54jo8hx" path="res://screens/options/screen_options.tscn" id="4_jawh6"]
-
-[sub_resource type="LabelSettings" id="LabelSettings_ogbxy"]
-font_size = 32
-outline_size = 12
-outline_color = Color(0, 0, 0, 1)
-shadow_size = 12
-shadow_color = Color(0, 0, 0, 1)
-shadow_offset = Vector2(0, 2)
+[ext_resource type="LabelSettings" uid="uid://cxm72jl6mff20" path="res://gui/label_big.tres" id="6_suxag"]
+[ext_resource type="PackedScene" uid="uid://btjlhuxuaaiou" path="res://contexts/shooting/context_shooting.tscn" id="7_k0pwf"]
+[ext_resource type="PackedScene" uid="uid://bgad0m0wgqtn5" path="res://contexts/shooting/scroll_mission.tscn" id="8_eslrd"]
 
 [node name="ScreenPlay" type="Node" unique_id=1671506322]
 script = ExtResource("1_ytnru")
@@ -148,7 +143,7 @@ text = "TENSION"
 horizontal_alignment = 2
 
 [node name="Music" type="FmodEventEmitter3D" parent="." unique_id=1889495696]
-event_name = "event:/Music_Main"
+event_name = "event:/Music/Music_Main"
 event_guid = "{0d057b78-7278-4d10-a191-1a6400f10125}"
 attached = false
 autoplay = true
@@ -164,4 +159,8 @@ mouse_filter = 2
 unique_name_in_owner = true
 layout_mode = 2
 text = "SOMETHING"
-label_settings = SubResource("LabelSettings_ogbxy")
+label_settings = ExtResource("6_suxag")
+
+[node name="Scroll" parent="." unique_id=1121585819 instance=ExtResource("8_eslrd")]
+transform = Transform3D(-0.97880805, 0.0901672, 0.18386054, 0.097534746, 0.9947363, 0.03141076, -0.18006054, 0.0486779, -0.9824503, -33.94947, 1.4062982, 9.617377)
+context_scene = ExtResource("7_k0pwf")

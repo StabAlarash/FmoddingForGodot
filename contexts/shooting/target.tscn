@@ -1,0 +1,22 @@
+[gd_scene format=3 uid="uid://cux60665g5tpg"]
+
+[ext_resource type="Script" uid="uid://bsifelpqnjrco" path="res://contexts/shooting/target.gd" id="1_o3s0d"]
+[ext_resource type="PackedScene" uid="uid://c864u2yaijdbl" path="res://assets/models/gltf/target.glb" id="2_df0n4"]
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_g4v7s"]
+height = 0.1
+
+[node name="Target" type="StaticBody3D" unique_id=1898769017]
+script = ExtResource("1_o3s0d")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=387367648]
+transform = Transform3D(-4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 0, 0, 1, 0, 0, 0)
+shape = SubResource("CylinderShape3D_g4v7s")
+
+[node name="target" parent="." unique_id=1748159855 instance=ExtResource("2_df0n4")]
+transform = Transform3D(-4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 0, 0, 1, 0, 0, 0)
+
+[node name="TargetHit" type="FmodEventEmitter3D" parent="." unique_id=206806782]
+event_name = "event:/Target/Target Hit"
+event_guid = "{73d85b28-6609-4539-b2a9-53228bb0fdb4}"
+unique_name_in_owner = true

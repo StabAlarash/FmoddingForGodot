@@ -5,10 +5,15 @@ extends Node
 
 @onready var lbl_interactable = %lbl_interactable
 
+@export var context:Context
 
 func _ready():
 	screen_options.paused_changed.connect(_on_pause_changed)
 	Game.interactable_changed.connect(_on_interactable_changed)
+	Game.context_requested.connect(set_context)
+	
+	if context:
+		set_context(context)
 	
 func _on_pause_changed(paused:bool):
 	Input.mouse_mode = Input.MOUSE_MODE_VISIBLE if paused else Input.MOUSE_MODE_CAPTURED
@@ -25,3 +30,16 @@ func _on_interactable_changed():
 		lbl_interactable.text = "[E] " + interactable.text
 	else:
 		lbl_interactable.text = ""
+
+func set_context(c) -> void:
+	if context != null and context != c:
+		context.on_exit()
+		context = null
+	context = c
+	if context:
+		add_child(context)
+		context.on_enter()
+		context.finished.connect(_on_context_finished)
+		
+func _on_context_finished():
+	set_context(null)

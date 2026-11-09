@@ -1,0 +1,120 @@
+[gd_scene format=3 uid="uid://btjlhuxuaaiou"]
+
+[ext_resource type="Script" uid="uid://cfeqyb7kfav8x" path="res://contexts/shooting/context_shooting.gd" id="1_bpehc"]
+[ext_resource type="LabelSettings" uid="uid://cxm72jl6mff20" path="res://gui/label_big.tres" id="1_jnwr4"]
+[ext_resource type="PackedScene" uid="uid://cux60665g5tpg" path="res://contexts/shooting/target.tscn" id="3_74qd3"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_k0pwf"]
+font_size = 64
+outline_size = 24
+outline_color = Color(0, 0, 0, 1)
+shadow_size = 24
+shadow_color = Color(0, 0, 0, 1)
+shadow_offset = Vector2(0, 6)
+
+[node name="ContextShooting" type="Node" unique_id=905635399]
+script = ExtResource("1_bpehc")
+time = 60.0
+targets = 5
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=919738658]
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer" unique_id=1182198512]
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -250.0
+offset_top = -61.0
+offset_right = -16.0
+offset_bottom = -16.0
+grow_horizontal = 0
+grow_vertical = 0
+
+[node name="lbl_targets" type="Label" parent="CanvasLayer/HBoxContainer" unique_id=1170331946]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Targets "
+label_settings = ExtResource("1_jnwr4")
+
+[node name="lbl_targets_found" type="Label" parent="CanvasLayer/HBoxContainer" unique_id=1491533027]
+unique_name_in_owner = true
+layout_mode = 2
+text = "99"
+label_settings = ExtResource("1_jnwr4")
+
+[node name="lbl_slash" type="Label" parent="CanvasLayer/HBoxContainer" unique_id=786462470]
+layout_mode = 2
+text = "/"
+label_settings = ExtResource("1_jnwr4")
+
+[node name="lbl_targets_total" type="Label" parent="CanvasLayer/HBoxContainer" unique_id=1299383810]
+unique_name_in_owner = true
+layout_mode = 2
+text = "99"
+label_settings = ExtResource("1_jnwr4")
+
+[node name="lbl_timer" type="Label" parent="CanvasLayer" unique_id=1647041295]
+unique_name_in_owner = true
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -105.0
+offset_top = 16.0
+offset_right = -32.0
+offset_bottom = 104.0
+grow_horizontal = 0
+text = "99"
+label_settings = SubResource("LabelSettings_k0pwf")
+
+[node name="lbl_result" type="Label" parent="CanvasLayer" unique_id=1921110365]
+unique_name_in_owner = true
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "YOU WIN !!!"
+label_settings = SubResource("LabelSettings_k0pwf")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Targets" type="Node3D" parent="." unique_id=826406995]
+unique_name_in_owner = true
+
+[node name="Target" parent="Targets" unique_id=163193093 instance=ExtResource("3_74qd3")]
+transform = Transform3D(0.13378036, 0, 0.991011, 0, 1, 0, -0.991011, 0, 0.13378036, -34.025543, 4.533079, 9.528111)
+
+[node name="Target2" parent="Targets" unique_id=2145866352 instance=ExtResource("3_74qd3")]
+transform = Transform3D(0.9893784, 0, -0.14536373, 0, 1, 0, 0.14536373, 0, 0.9893784, -49.339233, 9.415476, -2.239609)
+
+[node name="Target3" parent="Targets" unique_id=1534429583 instance=ExtResource("3_74qd3")]
+transform = Transform3D(-0.84536767, 0.28275764, -0.45321286, 0.31349054, 0.9495603, 0.0076799095, 0.43252444, -0.13558562, -0.89136934, -21.861975, 4.236628, -9.933647)
+
+[node name="Target4" parent="Targets" unique_id=2060275845 instance=ExtResource("3_74qd3")]
+transform = Transform3D(-0.5098262, 0.24241799, 0.8254155, 0.47558585, 0.8789483, 0.03561035, -0.716865, 0.4107111, -0.5634014, -13.76928, 4.3661985, 3.5042233)
+
+[node name="Target5" parent="Targets" unique_id=1291010809 instance=ExtResource("3_74qd3")]
+transform = Transform3D(-0.11835128, 0.05787204, -0.99128383, 0.0239352, 0.9981765, 0.05541673, 0.99268335, -0.017168209, -0.119520485, -32.98043, 3.5398798, -5.927356)
+
+[node name="Target6" parent="Targets" unique_id=1361575240 instance=ExtResource("3_74qd3")]
+transform = Transform3D(0.7507871, 0.06748365, 0.65708834, 0.0028422365, 0.9944287, -0.10537664, -0.66053873, 0.0809833, 0.7464118, -43.354378, 2.5753126, 4.431923)
+
+[node name="Target7" parent="Targets" unique_id=426695592 instance=ExtResource("3_74qd3")]
+transform = Transform3D(0.48827615, -0.083510056, 0.86868435, 0.11039356, 0.9933252, 0.03344146, -0.86567867, 0.07956854, 0.49423584, -41.93549, 9.415476, 13.559647)
+
+[node name="ChallengeStart" type="FmodEventEmitter2D" parent="." unique_id=1248524298]
+event_name = "event:/Challenge/Challenge Start"
+event_guid = "{08ad205b-bc8a-4eeb-a0f8-2c8474b2fb67}"
+unique_name_in_owner = true
+
+[node name="ChallengeWin" type="FmodEventEmitter2D" parent="." unique_id=826466862]
+event_name = "event:/Challenge/Challenge Win"
+event_guid = "{2d3dc45f-b98e-49cd-a650-dca6908a2200}"
+unique_name_in_owner = true
+
+[node name="ChallengeLoose" type="FmodEventEmitter2D" parent="." unique_id=1172557263]
+event_name = "event:/Challenge/Challenge Lose"
+event_guid = "{e763b3e3-ee82-46dc-9593-10e3ef285be3}"
+unique_name_in_owner = true
