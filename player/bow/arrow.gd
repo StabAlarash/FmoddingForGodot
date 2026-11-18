@@ -72,6 +72,7 @@ func _stick_into(hit: Dictionary) -> void:
 	var collider: Object = hit.collider
 	
 	var surface = Utils.get_surface_from_collider(collider, "Rock")
+	print(surface)
 	audio_hit.set_parameter("Surface", surface)
 	audio_hit.play()
 
