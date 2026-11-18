@@ -56,7 +56,7 @@ The FMOD project used by the game is located here: assets/fmod/project.fspro
 
 #### Movement
 
-- **FootStep**
+- **FootStep**: uses the Surface parameter
 - **Jump**
 - **Landing**
 
@@ -65,7 +65,7 @@ The FMOD project used by the game is located here: assets/fmod/project.fspro
 - **Bow Draw**
 - **Bow Shoot**
 - **Arrow Woosh**
-- **Arrow Hit**
+- **Arrow Hit**: uses the Surface parameter
 
 ### Door
 

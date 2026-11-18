@@ -65,13 +65,15 @@ func _orient() -> void:
 	global_transform.basis = Basis.looking_at(dir, up)
 
 
-func _stick_into(hit: Dictionary) -> void:
-	audio_hit.play()
-	
+func _stick_into(hit: Dictionary) -> void:	
 	_flying = false
 	var dir := velocity.normalized()
 	global_position = hit.position + dir * 0.08 # sink the tip slightly
 	var collider: Object = hit.collider
+	
+	var surface = Utils.get_surface_from_collider(collider, "Rock")
+	audio_hit.set_parameter("Surface", surface)
+	audio_hit.play()
 
 	if collider is PhysicsBody3D:
 		if collider is RigidBody3D:
