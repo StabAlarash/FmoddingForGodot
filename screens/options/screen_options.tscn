@@ -123,11 +123,13 @@ theme_override_constants/separation = 16
 alignment = 2
 
 [node name="btn_back_title" type="Button" parent="center/PanelContainer/VBoxContainer/MarginContainer2/HBoxContainer" unique_id=1771851465]
+unique_name_in_owner = true
 layout_mode = 2
 theme = ExtResource("2_j5u8y")
 text = "Back to Title"
 
 [node name="btn_continue" type="Button" parent="center/PanelContainer/VBoxContainer/MarginContainer2/HBoxContainer" unique_id=1885773351]
+unique_name_in_owner = true
 layout_mode = 2
 theme = ExtResource("2_j5u8y")
 text = "Continue"

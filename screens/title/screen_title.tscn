@@ -49,6 +49,7 @@ layout_mode = 2
 theme_override_constants/separation = 18
 
 [node name="btn_new_game" type="Button" parent="center/VBoxContainer" unique_id=388442384]
+unique_name_in_owner = true
 custom_minimum_size = Vector2(256, 64)
 layout_mode = 2
 theme = ExtResource("2_ohu24")
@@ -56,6 +57,7 @@ theme_override_font_sizes/font_size = 38
 text = "New Game"
 
 [node name="btn_quit" type="Button" parent="center/VBoxContainer" unique_id=782796099]
+unique_name_in_owner = true
 custom_minimum_size = Vector2(256, 64)
 layout_mode = 2
 theme = ExtResource("2_ohu24")

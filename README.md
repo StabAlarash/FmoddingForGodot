@@ -48,6 +48,13 @@ The FMOD project used by the game is located here: assets/fmod/project.fspro
 
 ## Available Events
 
+### GUI
+
+- **Button Enter**
+- **Button Exit**
+- **Button Pressed**
+- **Button Released**
+
 ### Music
 
 - **Music_Main**

@@ -147,6 +147,7 @@ event_name = "event:/Music/Music_Main"
 event_guid = "{0d057b78-7278-4d10-a191-1a6400f10125}"
 attached = false
 autoplay = true
+process_mode = 3
 
 [node name="CenterContainer" type="CenterContainer" parent="." unique_id=745824924]
 anchors_preset = 10
