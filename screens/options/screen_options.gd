@@ -12,6 +12,14 @@ extends CanvasLayer
 @onready var slider_sfx = %slider_sfx
 @onready var slider_music = %slider_music
 
+@onready var buttons = [
+	slider_master,
+	slider_sfx,
+	slider_music,
+	%btn_back_title,
+	%btn_continue
+]
+
 var paused = false:
 	set(value):
 		paused = value
@@ -26,27 +34,8 @@ func _ready():
 	slider_music.value_changed.connect(_on_music_changed)
 	slider_sfx.value_changed.connect(_on_sfx_changed)
 	
-	#print(FmodServer.banks_still_loading())
-	#var bank:FmodBank = FmodServer.get_all_banks()[0]
-	##for bank:FmodBank in FmodServer.get_all_banks():
-	#print(bank)
-	#for bus:FmodBus in bank.get_bus_list():
-		#print(bus)
-		#print(bus.get_path())
-		#print(bus.get_guid())
-		#
-	#var bus_music = FmodServer.get_bus_from_guid("{4530a1a8-7731-4e04-ae3b-138c7dd60fa2}")
-	#
-	##var bus_music:FmodBus = bank.get_bus("bus:/Music")
-	#print(bus_music, " ", bus_music.get_path())
-	#bus_music.volume = 5
-	#for bank:FmodBank in FmodServer.get_all_banks():
-		#print(bank.get_path())
-		#for bus:FmodBus in bank.get_bus_list():
-			#print(bus.get_path())
-
-	#for bus:FmodBus in FmodServer.get_all_buses():
-		#print(bus.get_path())
+	for button in buttons:
+		Globals.setup_gui_button(button)
 
 func _on_master_changed(value:float):
 	master_bus.volume = value
@@ -56,8 +45,8 @@ func _on_music_changed(value:float):
 	
 func _on_sfx_changed(value:float):
 	sfx_bus.volume = value
-
-func _input(_event):
+	
+func _process(_delta):
 	if Input.is_action_just_pressed("pause"):
 		paused = not paused
 

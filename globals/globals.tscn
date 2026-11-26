@@ -7,3 +7,19 @@ script = ExtResource("1_jmrm8")
 
 [node name="FmodBankLoader" type="FmodBankLoader" parent="." unique_id=824868059]
 bank_paths = ["res://assets/fmod/Build/Desktop/Master.bank"]
+
+[node name="ButtonEnter" type="FmodEventEmitter2D" parent="." unique_id=646869120]
+event_name = "event:/GUI/Button Enter"
+event_guid = "{75b59387-6909-4ca4-a689-e35a346a0519}"
+
+[node name="ButtonExit" type="FmodEventEmitter2D" parent="." unique_id=862639450]
+event_name = "event:/GUI/Button Exit"
+event_guid = "{2c67d397-2b24-4597-b8d7-a97fb1580fc9}"
+
+[node name="ButtonPressed" type="FmodEventEmitter2D" parent="." unique_id=1837765430]
+event_name = "event:/GUI/Button Pressed"
+event_guid = "{99f7cad6-0392-43d7-be1d-7535b03f561e}"
+
+[node name="ButtonReleased" type="FmodEventEmitter2D" parent="." unique_id=1032364205]
+event_name = "event:/GUI/Button Released"
+event_guid = "{c5e99e22-4b4e-4d64-a881-e9b04e711963}"

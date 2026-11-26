@@ -71,7 +71,7 @@ func _stick_into(hit: Dictionary) -> void:
 	global_position = hit.position + dir * 0.08 # sink the tip slightly
 	var collider: Object = hit.collider
 	
-	var surface = Utils.get_surface_from_collider(collider, "Rock")
+	var surface = Utils.get_surface_from_collider(collider)
 	print(surface)
 	audio_hit.set_parameter("Surface", surface)
 	audio_hit.play()
